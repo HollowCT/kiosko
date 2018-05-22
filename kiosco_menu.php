@@ -1,10 +1,25 @@
 
 <html>
+<<<<<<< HEAD
 <head>
   <?php require 'kiosco_materialize.php'; ?>
 </head>
 <style> <?php require 'kiosco_materialize.php'; ?> </style>
 
+=======
+<style>
+  .post{
+    -border: solid black .5px;
+    margin-top: 5px;
+  }
+  .titulo{
+    font-weight: bold;
+  }
+  .oculto{
+    display: none;
+  }
+</style>
+>>>>>>> b2a9435f2fa0ca54f82d0f50c0a80525139384dc
   <body>
     <div class="row">
       <div class="col s2">
