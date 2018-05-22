@@ -8,6 +8,9 @@
   .titulo{
     font-weight: bold;
   }
+  .oculto{
+    display: none;
+  }
 </style>
   <body>
       <a href="kiosco_publicaciones.php">Publicaciones</a>

@@ -21,6 +21,11 @@
 
 
         <?php
+
+        // New post button
+
+        require 'kiosco_nueva_publicacion.php';
+
         // Connect to Database
         require 'kiosco_conectar_bdd.php';
 
@@ -28,7 +33,7 @@
         $query = "SELECT * FROM Publicacion WHERE publicacionID NOT IN (SELECT publicacionID FROM Asistencia WHERE usuarioID = 1) AND publicacionID NOT IN (SELECT publicacionID FROM Voto WHERE usuarioID = 1) ORDER BY fechaINI DESC";
         $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
 
-        echo "<div class = 'container feed'>";
+        echo "<div class = 'feed'>";
 
         // Print the data
         while($row = mysqli_fetch_row($result)) {
