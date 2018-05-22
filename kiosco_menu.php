@@ -5,6 +5,9 @@
     -border: solid black .5px;
     margin-top: 5px;
   }
+  .titulo{
+    font-weight: bold;
+  }
 </style>
   <body>
       <a href="kiosco_publicaciones.php">Publicaciones</a>
