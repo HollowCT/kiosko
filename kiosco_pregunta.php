@@ -1,7 +1,7 @@
 <!--- Basic design structure for one question-->
 
 
-<div class = "container post pregunta">
+<div class = "post pregunta">
   <form id = "pregunta<?php echo $row[0];?>" action = "#">
     <div class = "titulo"><?php echo $row[9];?></div>
     <?php echo $row[2];?> <br>

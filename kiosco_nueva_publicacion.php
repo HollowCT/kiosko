@@ -1,6 +1,7 @@
 
+
             <!-- Modal Trigger -->
-            <div class = "container post nueva-publicacion">
+            <div class = " post center nueva-publicacion">
               <button data-target="modal-publicacion" class="btn modal-trigger">Nueva Publicación</button>
             </div>
             <!-- Modal Structure -->
@@ -42,28 +43,68 @@
             </div>
 
             <script>
-              $(document).ready(function() {
-                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                $('.modal-trigger').leanModal();
-              });
-
-              $(document).ready(function() {
-                // Calendar in Spanish settings
-                $('.datepicker').pickadate({
-                  format: 'yyyy-mm-dd',
-                  selectMonths: true, // Creates a dropdown to control month
-                  selectYears: 2,
-                  monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                  monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sept', 'Oct', 'Nov', 'Dic'],
-                  weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-                  weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vier', 'Sab'],
-                  weekdaysLetter: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-                  today: 'hoy',
-                  clear: 'borrar',
-                  close: 'cerrar',
-                  formatSubmit: 'yyyy-mm-dd'
+              //ajustes para que el modal funcione con la version jquery-1.9.1.min.js del menu
+                document.addEventListener('DOMContentLoaded', function() {
+                  var elems = document.querySelectorAll('.modal');
+                  var instances = M.Modal.init(elems, options);
                 });
-              });
+
+
+                $(document).ready(function(){
+                  $('.modal').modal();
+                  $('.datepicker').datepicker({
+                    closeText: 'Cerrar',
+                    prevText: '< Ant',
+                    nextText: 'Sig >',
+                    currentText: 'Hoy',
+                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                    monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                    dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+                    dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+                    weekHeader: 'Sm',
+                    dateFormat: 'yyyy-mm-dd',
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: '',
+                    container: 'body'
+                  });
+                });
+
+
+
+
+
+
+
+  /* JavaScript FOR version 2.1
+
+                $(document).ready(function() {
+                  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                  $('.modal-trigger').leanModal();
+                });
+
+
+                $(document).ready(function() {
+                  // Calendar in Spanish settings
+                  $('.datepicker').pickadate({
+                    format: 'yyyy-mm-dd',
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 2,
+                    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sept', 'Oct', 'Nov', 'Dic'],
+                    weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+                    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vier', 'Sab'],
+                    weekdaysLetter: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                    today: 'hoy',
+                    clear: 'borrar',
+                    close: 'cerrar',
+                    formatSubmit: 'yyyy-mm-dd'
+                  });
+                });
+
+    */
 
             </script>
             <script>

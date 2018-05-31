@@ -1,6 +1,6 @@
 <!--- Basic design structure for one announcement-->
 
-<div class = "container post anuncio">
+<div class = "post anuncio">
   <div class = "titulo"><?php echo $row[9];?></div>
   <form id = "anuncio<?php echo $row[0];?>" action = "#">
     <?php echo $row[2];?> <br>

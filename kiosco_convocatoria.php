@@ -1,7 +1,7 @@
 <!--- Basic design structure for one event invitation-->
 
 
-<div class = "container post convocatoria">
+<div class = "post convocatoria">
   <form id = "convocatoria<?php echo $row[0];?>" action = "#">
     <div class = "titulo"><?php echo $row[9];?></div>
     <?php echo $row[2];?> <br>
