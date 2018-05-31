@@ -30,6 +30,11 @@
 
     }
 
+    .btn-profile{
+      border: none;
+
+    }
+
     .post{
       -border: solid black .5px;
       margin-top: 5px;

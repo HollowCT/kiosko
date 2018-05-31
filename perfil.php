@@ -20,7 +20,7 @@
 
           <h2>Mi Perfil</h2>
 
-          <div class = "container">
+          <div class = "row">
             <?php
 
             // Connect to Database
@@ -54,13 +54,35 @@
 
             <div class = "row profile-sections">
 
-              <div class = "col s4 align center">
-                <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+              <div class = "col s4">
+                <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                    <img class="menu-img" src ="icons/planes.png"></img>
+                    <a class="blue-text text-darken-2 flow-text">Mis Planes</a>
+                    <br>
+                    <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
 
-                  <?php //echo "<img src = 'img/".$row['5'].".png'>"; ?>
+                </button>
               </div>
 
+              <div class = "col s4">
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                    <img class="menu-img" src ="icons/manos.png"></img>
+                    <a class="blue-text text-darken-2 flow-text">Mis Votos</a>
+                    <br>
+                    <a class="grey-text text-darken-2 justify">Descubra los resultados que le han dado a sus preguntas</a>
 
+                </button>
+              </div>
+
+              <div class = "col s4">
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                    <img class="menu-img" src ="icons/anuncio.png"></img>
+                    <a class="blue-text text-darken-2 flow-text">Mis Anuncios</a>
+                    <br>
+                    <a class="grey-text text-darken-2 justify">Vuelva a leer los mensajes que ha compartido</a>
+
+                </button>
+              </div>
 
             </div>
 
