@@ -1,5 +1,17 @@
 
 <html>
+<style>
+  .post{
+    -border: solid black .5px;
+    margin-top: 5px;
+  }
+  .titulo{
+    font-weight: bold;
+  }
+  .oculto{
+    display: none;
+  }
+</style>
   <head>
     <?php require 'kiosco_materialize.php'; ?>
     <style media="screen">
