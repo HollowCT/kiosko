@@ -16,8 +16,10 @@
     <?php require 'kiosco_materialize.php'; ?>
     <style media="screen">
 
-    header, main, footer {
+    header{
       padding-left: 300px;
+      height: 70px;
+      margin-top: -2px;
     }
 
     @media only screen and (max-width : 992px) {
@@ -31,7 +33,7 @@
     }
 
     .menu-img{
-      max-width:80%;
+      max-width:90%;
       height: auto;
       padding: .5em;
     }
@@ -76,6 +78,19 @@
     <!-- Navbar goes here -->
 
 <header class="amber accent-3">
+  <?php require 'kiosco_conectar_bdd.php'; ?>
+
+<?php // aux query for user
+  $query = "SELECT foto FROM Usuario WHERE usuarioID = 2";
+  $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+  $row = mysqli_fetch_row($result);
+  $profile = "img/".$row[0].".png";
+?>
+<div class="valign-wrapper right" style="width:70px;">
+  <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
+</div>
+<?php require 'kiosco_desconectar_bdd.php'; ?>
+
   <div class = "white-text hide-on-large-only">
   <a href="#" data-target="slide-out" class="sidenav-trigger large"><i class="material-icons medium">menu</i></a>
 
@@ -89,7 +104,6 @@
   </ul>
 
    <div class="divider"></div>
-
 </header>
 
 
