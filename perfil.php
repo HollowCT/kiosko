@@ -57,6 +57,7 @@
               <div class = "col s4">
                 <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
                     <img class="menu-img" src ="icons/planes.png"></img>
+                    <br>
                     <a class="blue-text text-darken-2 flow-text">Mis Planes</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
@@ -67,6 +68,7 @@
               <div class = "col s4">
                 <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
                     <img class="menu-img" src ="icons/manos.png"></img>
+                    <br>
                     <a class="blue-text text-darken-2 flow-text">Mis Votos</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Descubra los resultados que le han dado a sus preguntas</a>
@@ -77,6 +79,7 @@
               <div class = "col s4">
                 <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
                     <img class="menu-img" src ="icons/anuncio.png"></img>
+                    <br>
                     <a class="blue-text text-darken-2 flow-text">Mis Anuncios</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Vuelva a leer los mensajes que ha compartido</a>

@@ -10,6 +10,7 @@
   </div>
 
   <div class = "col s11 amber accent-1 low-text left-align " style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;">
+      <div class ="col s12">
       <div class = "titulo flow-text"><?php echo $row[9];?></div>
 
       <?php // aux query for user
@@ -28,6 +29,7 @@
         <div class = "anuncio-contenido" id = "respuesta<?php echo $row[0];?>">
         </div>
       </form>
+    </div>
   </div>
 
 

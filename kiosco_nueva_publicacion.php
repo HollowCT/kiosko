@@ -1,13 +1,11 @@
 
 
             <!-- Modal Trigger -->
-            <div class = " row post center nueva-publicacion z-depth-2" style="border-radius: 20px; display: flex;">
+            <div class = " row post nueva-publicacion z-depth-2" style="border-radius: 20px; display: flex;">
               <div class = "col s1 amber accent-2" style="border-radius: 20px 0px 0px 20px">
                 <i class="medium material-icons">add</i>
               </div>
-
-                <button data-target="modal-publicacion" class="modal-trigger col s11 amber accent-1  flow-text center-align amber accent-1" style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;">Nueva Publicación</button>
-
+                <button data-target="modal-publicacion" class="modal-trigger col s11 amber accent-1  left-align flow-text amber accent-1" style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;"> <div class = "col s12">Nueva Publicación</div></button>
 
             </div>
             <!-- Modal Structure -->
