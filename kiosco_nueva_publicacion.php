@@ -1,8 +1,14 @@
 
 
             <!-- Modal Trigger -->
-            <div class = " post center nueva-publicacion">
-              <button data-target="modal-publicacion" class="btn modal-trigger">Nueva Publicación</button>
+            <div class = " row post center nueva-publicacion z-depth-2" style="border-radius: 20px; display: flex;">
+              <div class = "col s1 amber accent-2" style="border-radius: 20px 0px 0px 20px">
+                <i class="medium material-icons">add</i>
+              </div>
+
+                <button data-target="modal-publicacion" class="modal-trigger col s11 amber accent-1  flow-text center-align amber accent-1" style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;">Nueva Publicación</button>
+
+
             </div>
             <!-- Modal Structure -->
             <div id="modal-publicacion" class="modal  modal-fixed-footer">
@@ -10,7 +16,7 @@
                 <!-- Different content options -->
 
                 <!-- Default state-->
-                <div id = "ventana-publicacion" class = "row">
+                <div id = "ventana-publicacion" class = "center-align row">
                   <h4>¿Qué desea publicar?</h4>
                   <br>
 
