@@ -1,15 +1,13 @@
 <html>
     <meta charset="UTF-8">
     <head>
-      <!-- Lista de Actividad -->
+
 
       <?php
         // Show menu
         require 'kiosco_menu.php';
 
       ?>
-
-
     </head>
     <body>
       <div class = "row">
@@ -17,7 +15,6 @@
           menu-space
         </div>
         <div class = "col l9 s12">
-
           <h2 class = "row"> Publicaciones</h2>
 
             <?php
@@ -68,6 +65,8 @@
               //  SUBMIT Vote
               votar(preguntaID,respuesta);
               responderVoto(preguntaID);
+            }else{
+              alert("Elija su respuesta para votar");
             }
           }
 
@@ -77,15 +76,10 @@
           }
 
           function responderVoto(preguntaID) {
-              var respuesta = document.getElementById("respuesta"+preguntaID);
-              respuesta.parentNode.removeChild(respuesta);
+              var respuesta = document.getElementById("boton-votar"+preguntaID);
+              respuesta.classList.add("disabled");
 
-              var div = document.createElement('div');
-              div.className = "pregunta-contenido";
-              div.id = "respuesta"+preguntaID;
-
-              div.innerHTML = '<br>Tu voto ha sido registrado, gracias por participar.';
-              document.getElementById("pregunta"+preguntaID).appendChild(div);
+              alert("Su voto ha sido registrado, gracias por participar.");
 
           }
 

@@ -77,6 +77,7 @@
 
     <!-- Navbar goes here -->
 
+<<<<<<< HEAD
 <header class="amber accent-3">
   <?php require 'kiosco_conectar_bdd.php'; ?>
 
@@ -90,6 +91,21 @@
   <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
 </div>
 <?php require 'kiosco_desconectar_bdd.php'; ?>
+=======
+<header style="background-color: #5F77B7">
+  <?php require 'kiosco_conectar_bdd.php'; ?>
+
+  <?php // aux query for user
+    $query = "SELECT foto FROM Usuario WHERE usuarioID = 2";
+    $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+    $row = mysqli_fetch_row($result);
+    $profile = "img/".$row[0].".png";
+  ?>
+  <div class="valign-wrapper right" style="width:70px;">
+    <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
+  </div>
+  <?php require 'kiosco_desconectar_bdd.php'; ?>
+>>>>>>> c76500a406b9e087e023a0ef5880781bb0474e3e
 
   <div class = "white-text hide-on-large-only">
   <a href="#" data-target="slide-out" class="sidenav-trigger large"><i class="material-icons medium">menu</i></a>
