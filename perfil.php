@@ -1,15 +1,11 @@
 <html>
     <meta charset="UTF-8">
     <head>
-      Perfil de Usuario
-
       <?php
         // Show menu
         require 'kiosco_menu.php';
 
       ?>
-
-
     </head>
     <body>
       <div class = "row">
