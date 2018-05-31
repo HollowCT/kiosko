@@ -28,6 +28,18 @@ $counter=1;
       padding: 2em;
     }
 
+    .menu-img{
+      max-width:100%;
+      height: auto;
+      padding: .5em;
+    }
+
+    .btn-menu{
+      border: none;
+      height: 200px;
+
+    }
+
     </style>
 
     <!--Import Google Icon Font-->
@@ -110,8 +122,8 @@ $counter=1;
   </div>
   <ul id="slide-out" class="sidenav sidenav-fixed">
     <li class="logo center" ><h1 text-align="center">g r u p</h1></li>
-    <li id="nav"><a class="waves-effect waves-light btn-large"><i class="material-icons left">date_range</i>Planes</a></li>
-    <li id="nav"><a class="waves-effect waves-light btn-large"><i class="material-icons left">shopping_basket</i>Mercado</a></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
   </ul>
 
    <div class="divider"></div>

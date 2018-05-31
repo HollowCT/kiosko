@@ -1,5 +1,5 @@
 
-<!---  Los asuntos de las preguntas son la pregunta 
+<!---  Los asuntos de las preguntas son la pregunta
 -->
 
 <form id = "forma-pregunta" name= "forma-pregunta" class = "col s12" method = "POST" enctype="multipart/form-data" >
