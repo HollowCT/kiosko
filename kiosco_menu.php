@@ -32,6 +32,10 @@
       padding: 1.5em;
     }
 
+    h2{
+      color: #68B1A7;
+    }
+
     .menu-img{
       max-width:90%;
       height: auto;
