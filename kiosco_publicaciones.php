@@ -1,7 +1,7 @@
 <html>
     <meta charset="UTF-8">
     <head>
-      Lista de Actividad
+      <!-- Lista de Actividad -->
 
       <?php
         // Show menu

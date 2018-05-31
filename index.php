@@ -1,6 +1,4 @@
 <?php require 'config.php'; ?>
-
-<?php require 'kiosco_materialize.php'; ?>
 <html>
 
 <head>
@@ -20,7 +18,7 @@
   {
   	margin-top: 30px;
   	width: 800px;
-  	height: 500px;
+  	height: 600px;
   }
 
   .tabs .indicator
@@ -40,8 +38,16 @@
   {
   	position: absolute;
   }
+
   </style>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <?php require 'kiosco_materialize.php'; ?>
 </head>
 
 <body>
@@ -82,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
                 session_start();
                 $_SESSION['S_username'] = $username;
                 $_SESSION['S_id'] = $info['id'];
-                header("location: kiosko_main_menu.php");
+                header("location: kiosco_publicaciones.php");
             } else{
 
                 $password_err = 'La contraseña no es válida.';
@@ -166,15 +172,16 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
   <div class="section"></div>
   <div class="container white z-depth-2">
-  	<ul class="tabs teal">
-  		<li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
-  		<li class="tab col s3"><a class="white-text" href="#register">register</a></li>
-  	</ul>
 
+<div class="row">
+  <ul class="tabs teal">
+    <li class="tab col s6"><a class="white-text active" href="#login">login</a></li>
+    <li class="tab col s6"><a class="white-text" href="#register">register</a></li>
+  </ul>
   	<div id="login"  class="col s12">
   		<form name='login' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
-  				<h3 class="teal-text">Bienvenido</h3>
+  				<h4 class="teal-text">Bienvenido</h3>
   				<div class="row">
   					<div class="input-field col s12">
   						<input name="username" id="username" type="text" class="validate">
@@ -202,7 +209,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   	<div id="register" class="col s12">
   		<form name='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
-  				<h3 class="teal-text">Welcome</h3>
+  				<h4 class="teal-text">¿Nuevo Usuario? ¡Registrese!</h4>
   				<div class="row">
   					<div class="input-field col s4">
   						<input name="first_name" id="first_name" type="text" class="validate" required>
@@ -220,14 +227,18 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   				<div class="row">
   					<div class="input-field col s6">
               <p>
+                <label for="male">
                 <input id="male" class="with-gap" name="sex" type="radio" value='m' checked />
-                <label for="male">Hombre</label>
+                <span>Hombre</span>
+              </label>
               </p>
   					</div>
             <div class="input-field col s6">
               <p>
-                <input id="female" class="with-gap" name="sex" type="radio" value="f" />
-                <label for="female">Mujer</label>
+                <label for="female">
+                <input id="female" class="with-gap" name="sex" type="radio" value='f'  />
+                <span>Mujer</span>
+              </label>
               </p>
   					</div>
   				</div>
@@ -248,9 +259,19 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   		</form>
   	</div>
   </div>
+</div>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <script type="text/javascript">
+
+
+$(document).ready(function(){
+$('.tabs').tabs();
+});
+  </script>
 </body>
 
 </html>
