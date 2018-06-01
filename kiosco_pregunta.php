@@ -14,8 +14,8 @@
       <div class = "titulo flow-text"><?php echo $row[9];?></div>
 
       <?php // aux query for user
-        $aux_query = "SELECT first_name, last_name FROM Users WHERE id = $row[3]";
-        $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
+        $aux_query = "SELECT first_name, last_name FROM users WHERE id = $row[3]";
+        $aux_result = mysqli_query($link, $aux_query) or die ("Error de consulta ".mysqli_error());
         $aux_row = mysqli_fetch_row($aux_result);
       ?>
 

@@ -24,7 +24,7 @@
           require 'kiosco_conectar_bdd.php';
 
           // Create QUERY
-          $query = "SELECT * FROM Pregunta WHERE preguntaID NOT IN (SELECT publicacionID FROM Voto WHERE usuarioID = 1) ORDER BY fechaINI DESC";
+          $query = "SELECT * FROM Pregunta WHERE preguntaID NOT IN (SELECT publicacionID FROM Voto WHERE usuarioID = $_SESSION[S_id]) ORDER BY fechaINI DESC";
           $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
 
           // Print the data
