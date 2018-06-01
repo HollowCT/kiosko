@@ -130,14 +130,11 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 //Password stuff
 
     $password = trim($_POST['newpassword']);
-    echo $password;
 
     $confirm_password = trim($_POST['confirm_password']);
-    echo $confirm_password;
 
     if($password != $confirm_password){
         $confirm_password_err = 'La contraseña no es la misma.';
-        echo $confirm_password_err;
     }
     // Remaining data
 
@@ -148,7 +145,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     if(empty($username_err) && empty($confirm_password_err)){
 
         $hash = password_hash($password, PASSWORD_BCRYPT);
-        $sql2 = "INSERT INTO users (username,first_name,last_name, password, dob, sex) VALUES ('$username','$fn','$ln','$hash','$dob','$sex')";
+        $sql2 = "INSERT INTO users (username,first_name,last_name, password, dob, sex, foto) VALUES ('$username','$fn','$ln','$hash','$dob','$sex','profile8')";
 
         // echo $sql2;
 
