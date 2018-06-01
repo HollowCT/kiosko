@@ -21,8 +21,10 @@
 
           <h3>Mi Perfil</h3>
 
+
           <div class = "row">
             <?php
+            print_r($_SESSION);
 
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
