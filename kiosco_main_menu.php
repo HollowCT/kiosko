@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'kiosco_conectar_bdd.php';
+require 'kiosco_conectar_bdd.php';
 // $id = $_SESSION('id');
 // echo $id;
 // var_dump($_SESSION);
@@ -110,6 +110,8 @@ $counter=1;
            $data = htmlspecialchars($data);
            return $data;
         }
+
+        require 'kiosco_desconectar_bdd.php';
     ?>
 
 
@@ -213,6 +215,7 @@ $counter=1;
 
                 <!-- empieza cartas generadas desde BD -->
                 <?php
+                require 'kiosco_conectar_bdd.php';
                 $sql = "SELECT * FROM mercado JOIN users WHERE users.id =mercado.usuarioID" ;
                 $q1 = mysqli_query($conexion, $sql);
                 if(mysqli_num_rows($q1)!=0){
@@ -291,7 +294,7 @@ $counter=1;
               <?php
             }
           }
-
+            require 'kiosco_desconectar_bdd.php';
 
                 ?>
 
