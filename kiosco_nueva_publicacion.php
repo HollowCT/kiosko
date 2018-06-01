@@ -71,7 +71,7 @@
                     weekHeader: 'Sm',
                     dateFormat: 'yyyy-mm-dd',
                     format: 'yyyy-mm-dd',
-                    formatSubmit: 'yyyy-mm-dd', 
+                    formatSubmit: 'yyyy-mm-dd',
                     firstDay: 1,
                     isRTL: false,
                     showMonthAfterYear: false,
