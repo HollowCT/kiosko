@@ -1,13 +1,13 @@
 <form id = "forma-anuncio" name= "forma-anuncio" class = "col s12" method = "POST" enctype="multipart/form-data" >
   <input type = "hidden"  name = "usuarioID" value = "1">
-  
 
 
+<br><br><br>
   <div class = "col s12">
-  <br>
 
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">title</i>
+      <br><br>
       <input placeholder="Título de anuncio" name ="titulo-anuncio" type = "text" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
     </div>
   </div>
