@@ -14,7 +14,7 @@
 
       <?php // aux query for user
         $aux_query = "SELECT first_name, last_name FROM users WHERE id = $row[3]";
-        $aux_result = mysqli_query($link, $aux_query) or die ("Error de consulta ".mysqli_error());
+        $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
         $aux_row = mysqli_fetch_row($aux_result);
         date_default_timezone_set('America/New_York');
         $date = date_create($row[5]);

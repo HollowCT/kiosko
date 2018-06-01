@@ -19,7 +19,7 @@
         </div>
         <div class = "col l9 s12">
 
-          <br> 
+          <br>
 
           <div class = "row">
             <?php
