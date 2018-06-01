@@ -32,10 +32,6 @@
       padding: 1.5em;
     }
 
-    h2{
-      color: #68B1A7;
-    }
-
     .menu-img{
       max-width:90%;
       height: auto;
@@ -85,7 +81,7 @@
   <?php require 'kiosco_conectar_bdd.php'; ?>
 
   <?php // aux query for user
-    $query = "SELECT foto FROM Usuario WHERE usuarioID = 2";
+    $query = "SELECT foto FROM Users WHERE id = 2";
     $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
