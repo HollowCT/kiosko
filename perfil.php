@@ -29,8 +29,6 @@
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
 
-            $userID = 2;
-
             // Create QUERY
             $query = "SELECT * FROM users WHERE id = $_SESSION[S_id]";
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
@@ -43,7 +41,7 @@
             <div class = "row profile-data">
 
               <div class = "col s6 align center">
-                  <?php echo "<img src = 'img/".$row['7'].".png'>"; ?>
+                  <?php echo "<img src = 'img/".$row[7].".png'>"; ?>
               </div>
 
               <div class = "col s6">
