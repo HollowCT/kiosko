@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <meta charset="UTF-8">
     <head>
@@ -5,7 +6,7 @@
       <?php
         // Import styles
         require 'kiosco_materialize.php';
-        
+
       ?>
     </head>
     <body>

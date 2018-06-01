@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
             <!-- Modal Trigger -->
             <div class = " row post nueva-publicacion z-depth-2" style="border-radius: 20px; display: flex;">

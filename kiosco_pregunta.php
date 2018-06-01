@@ -1,5 +1,5 @@
 <!--- Basic design structure for one question-->
-
+<?php session_start(); ?>
 
 <div class = "post pregunta row center z-depth-2" style="border-radius: 20px; display: flex;">
 

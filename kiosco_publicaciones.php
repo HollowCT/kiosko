@@ -28,11 +28,7 @@
 
             // Create QUERY
 
-            $query = "SELECT * FROM Publicacion WHERE
-             publicacionID NOT IN (SELECT publicacionID FROM
-                Asistencia WHERE usuarioID = $_SESSION[S_id]) AND
-                publicacionID NOT IN(SELECT publicacionID FROM Voto
-                   WHERE usuarioID = $_SESSION[S_id]) ORDER BY fechaINI DESC";
+            $query = "SELECT * FROM Publicacion WHERE publicacionID NOT IN (SELECT publicacionID FROM Asistencia WHERE usuarioID = ".$_SESSION[S_id].") AND publicacionID NOT IN(SELECT publicacionID FROM Voto WHERE usuarioID = $_SESSION[S_id]) ORDER BY fechaINI DESC";
 
 
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());

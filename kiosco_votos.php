@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
