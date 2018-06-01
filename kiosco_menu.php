@@ -86,6 +86,10 @@
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
   ?>
+  <div class="valign-wrapper right">
+    <a onclick="logout()" class=" btn red btn-large right"> <i class="material-icons right">exit_to_app</i>Salir </a>
+  </div>
+
   <div class="valign-wrapper right" style="width:70px;">
     <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
   </div>
@@ -153,6 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
  $(document).ready(function(){
    $('.sidenav').sidenav();
  });
+
+ function logout(){
+   window.location.replace("logout.php");
+   return false;
+ }
 
 
 
