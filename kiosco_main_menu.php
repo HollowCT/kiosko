@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'kiosco_conectar_bdd.php';
 // $id = $_SESSION('id');
 // echo $id;
 // var_dump($_SESSION);
