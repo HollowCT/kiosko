@@ -51,10 +51,10 @@
             <div class = "row profile-sections">
 
               <div class = "col s4">
-                <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile amber accent-1" onclick="">
                     <img class="menu-img" src ="icons/planes.png"></img>
                     <br>
-                    <a class="blue-text text-darken-2 flow-text">Mis Planes</a>
+                    <a class="flow-text" style="color: #5F77B7">Mis Planes</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
 
@@ -62,10 +62,10 @@
               </div>
 
               <div class = "col s4">
-                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="">
                     <img class="menu-img" src ="icons/manos.png"></img>
                     <br>
-                    <a class="blue-text text-darken-2 flow-text">Mis Votos</a>
+                    <a class="blue-text text-darken-2 flow-text"  style="color: #5F77B7">Mis Votos</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Descubra los resultados que le han dado a sus preguntas</a>
 
@@ -73,10 +73,10 @@
               </div>
 
               <div class = "col s4">
-                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile" onclick="">
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="">
                     <img class="menu-img" src ="icons/anuncio.png"></img>
                     <br>
-                    <a class="blue-text text-darken-2 flow-text">Mis Anuncios</a>
+                    <a class="blue-text text-darken-2 flow-text"  style="color: #5F77B7">Mis Anuncios</a>
                     <br>
                     <a class="grey-text text-darken-2 justify">Vuelva a leer los mensajes que ha compartido</a>
 
