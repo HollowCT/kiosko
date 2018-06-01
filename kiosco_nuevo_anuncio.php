@@ -1,6 +1,7 @@
+<?php session_start(); ?>
 <form id = "forma-anuncio" name= "forma-anuncio" class = "col s12" method = "POST" enctype="multipart/form-data" >
-  <input type = "hidden"  name = "usuarioID" value = "1">
-  
+  <input type = "hidden"  name = "usuarioID" value = "$_SESSION[S_id]">
+
 
 
   <div class = "col s12">

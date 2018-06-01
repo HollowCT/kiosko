@@ -126,10 +126,11 @@ $counter=1;
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
   </ul>
 
-   <div class="divider"></div> -->
 
 <?php require 'kiosco_menu.php'; ?>
+
 </header>
+
 
 
 
