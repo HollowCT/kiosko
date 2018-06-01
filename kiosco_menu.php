@@ -87,7 +87,7 @@
     $profile = "img/".$row[0].".png";
   ?>
   <div class="valign-wrapper right">
-    <a onclick="logout()" class=" btn red btn-large right"> <i class="material-icons right">exit_to_app</i>Salir </a>
+    <a onclick="logout()" class=" btn red btn-large right lighten-1" style="margin-top:10px"> <i class="material-icons right">exit_to_app</i>Salir </a>
   </div>
 
   <div class="valign-wrapper right" style="width:70px;">
