@@ -1,4 +1,4 @@
-<?php require 'config.php'; ?>
+<?php require 'kiosco_conectar_bdd.php'; ?>
 
 <?php require 'kiosco_materialize.php'; ?>
 <html>
