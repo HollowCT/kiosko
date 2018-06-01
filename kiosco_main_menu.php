@@ -88,7 +88,7 @@ $counter=1;
            // echo '<h1>todo bien aqui</h1>';
            $sql =  "INSERT into Mercado (nombre, descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora) VALUES ('$producto_nombre','$producto_desc','$id','$producto_tele','$producto_precio','$producto_dias_inicio','$producto_dias_fin','$producto_hora' )";
            // echo $sql;
-           if(mysqli_query($link, $sql)){
+           if(mysqli_query($conexion, $sql)){
                // Redirect to home to the logged in page
                echo '<script language="javascript">';
                echo 'alert("producto agregado")';
@@ -214,7 +214,7 @@ $counter=1;
                 <!-- empieza cartas generadas desde BD -->
                 <?php
                 $sql = "SELECT * FROM mercado JOIN users WHERE users.id =mercado.usuarioID" ;
-                $q1 = mysqli_query($link, $sql);
+                $q1 = mysqli_query($conexion, $sql);
                 if(mysqli_num_rows($q1)!=0){
 
                 while($d=mysqli_fetch_assoc($q1)){
