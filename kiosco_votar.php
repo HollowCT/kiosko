@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Connect to database
 require 'kiosco_conectar_bdd.php';
 
@@ -6,7 +8,7 @@ require 'kiosco_conectar_bdd.php';
 
 $preguntaID = $_GET["preguntaID"];
 $voto = $_GET["voto"];
-$query = "INSERT INTO Voto(publicacionID, usuarioID, voto) VALUES ($preguntaID,1,$voto)";
+$query = "INSERT INTO Voto(publicacionID, usuarioID, voto) VALUES ($preguntaID,$_SESSION[S_id],$voto)";
 echo $query;
 $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
 

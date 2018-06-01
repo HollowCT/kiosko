@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 
 <html>
 <style>
@@ -78,27 +79,34 @@
     <!-- Navbar goes here -->
 
 <header style="background-color: #5F77B7">
-  <?php require 'kiosco_conectar_bdd.php'; ?>
+  <?php require 'config.php'; ?>
 
   <?php // aux query for user
-    $query = "SELECT foto FROM Users WHERE id = 2";
-    $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+  // echo "help";
+  //echo $_SESSION[S_id];
+    $query = "SELECT foto FROM users WHERE id = $_SESSION[S_id]";
+    $result = mysqli_query($link, $query) or die ("Error de consulta ".mysqli_error());
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
   ?>
+
+  <div class="valign-wrapper right">
+    <a onclick="logout()" class=" btn red btn-large right"> <i class="material-icons right">exit_to_app</i>Salir </a>
+  </div>
+
   <div class="valign-wrapper right" style="width:70px;">
     <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>
 
   <div class = "white-text hide-on-large-only">
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger large"><i class="material-icons medium">menu</i></a>
   Menu
   </div>
   <ul id="slide-out" class="sidenav sidenav-fixed">
     <li class="logo center hide-on-small-only" ><img class="menu-img" src ="icons/comuna_amarillo.png" style="max-width:150px;"></img></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
-    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosko_main_menu.php';"  > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_main_menu.php';"  > <img class="menu-img" src ="icons/mercado.png"></img></button></li> </li>
   </ul>
 
    <div class="divider"></div>
@@ -154,6 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
    $('.sidenav').sidenav();
  });
 
+
+ function logout() {
+      window.location.replace("index.php");
+      return false;
+  }
 
 
 </script>

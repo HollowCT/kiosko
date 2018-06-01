@@ -20,12 +20,10 @@
 
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
-
-            $userID = 2;
-
+            
             // Create QUERY
-            $query = "SELECT * FROM Users WHERE id = $userID";
-            $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+            $query = "SELECT * FROM users WHERE id = $_SESSION[S_id]";
+            $result = mysqli_query($link, $query) or die ("Error de consulta ".mysqli_error());
             $row = mysqli_fetch_row($result);
             // Set timezone
             date_default_timezone_set('America/New_York');

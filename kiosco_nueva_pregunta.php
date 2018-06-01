@@ -1,10 +1,10 @@
+<?php session_start(); ?>
 
 <!---  Los asuntos de las preguntas son la pregunta
 -->
 
 <form id = "forma-pregunta" name= "forma-pregunta" class = "col s12" method = "POST" enctype="multipart/form-data" >
-  <input type = "hidden"  name = "usuarioID" value = "1">
-
+<input type = "hidden"  name = "usuarioID" value = "$_SESSION[S_id]"> 
   <div class = "col s12">
     <br>
     <br>
