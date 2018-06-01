@@ -1,6 +1,6 @@
 <?php require 'config.php'; ?>
 <html>
-
+<meta charset="utf-8">
 <head>
 
   <style>
