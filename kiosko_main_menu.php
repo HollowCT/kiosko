@@ -116,7 +116,7 @@ $counter=1;
     <!-- Navbar goes here -->
 
 <header class="teal">
-  <!-- <div class="section right-align" id="top">
+  <div class="section right-align" id="top">
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
     <a onclick="logout()" class="btn red btn-large"> <i class="material-icons right">exit_to_app</i>Salir </a>
   </div>
@@ -126,11 +126,9 @@ $counter=1;
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
   </ul>
 
-
-<?php require 'kiosco_menu.php'; ?>
+   <div class="divider"></div>
 
 </header>
-
 
 
 
@@ -142,7 +140,7 @@ $counter=1;
       <div class="row">
 
 
-        <div class="col  s12">
+        <div class="col teal s12">
 
           <div class="row">
 

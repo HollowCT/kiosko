@@ -1,6 +1,5 @@
-<?php session_start(); ?>
-<html>
 
+<html>
 <style>
   .post{
     -border: solid black .5px;
@@ -155,10 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
    $('.sidenav').sidenav();
  });
 
- function logout() {
-            window.location.replace("index.php");
-            return false;
-        }
 
 
 </script>
