@@ -36,10 +36,10 @@
 
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">mode_edit</i>
-      <input placeholder="Opción 1" name ="opc1-pregunta" type = "text" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
+      <input placeholder="Opción 1" name ="opc1-pregunta" type = "text" class = "row validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
       <label for= "opc1-pregunta">Respuestas</label>
-      <input placeholder="Opción 2" name ="opc2-pregunta" type = "text" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
-      <input placeholder="Opción 3 (opcional)" name ="opc3-pregunta" type = "text" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
+      <input placeholder="Opción 2" name ="opc2-pregunta" type = "text" class = "row validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
+      <input placeholder="Opción 3 (opcional)" name ="opc3-pregunta" type = "text" class = "row validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
 
     </div>
 
