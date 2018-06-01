@@ -1,10 +1,14 @@
 <?php
 //Esta linea es para incluir el archivo con las variables
-$hostname = 'localhost';
-$user = 'root';
-$pass = 'root'; //tino usa root, rodrigo no tiene pw
+$server = "localhost";
+$user = "krasp_001";
+$pass ="secretUDEM";
+$dbase ="kiosco_intel";
+//tino usa root, rodrigo no tiene pw
 /* CONECTAR CON BASE DE DATOS **************** */
-   $link = mysqli_connect($hostname,$user,$pass,'PULI') or die(mysqli_error());
+
+
+   $link = mysqli_connect($hostname,$user,$pass,$dbase) or die(mysqli_error());
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
     echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;

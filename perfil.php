@@ -1,3 +1,8 @@
+<?php
+  // Show menu
+  session_start();
+
+?>
 <html>
     <meta charset="UTF-8">
     <head>
@@ -26,7 +31,7 @@
 
             // Create QUERY
             $query = "SELECT * FROM users WHERE id = $_SESSION[S_id]";
-            $result = mysqli_query($link, $query) or die ("Error de consulta ".mysqli_error());
+            $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
             $row = mysqli_fetch_row($result);
             // Set timezone
             date_default_timezone_set('America/New_York');
