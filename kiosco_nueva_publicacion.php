@@ -14,12 +14,14 @@
                 <!-- Different content options -->
 
                 <!-- Default state-->
-                <div id = "ventana-publicacion" class = "center-align row">
-                  <h4>¿Qué desea publicar?</h4>
+                <div id = "ventana-publicacion" class = " col s12">
+                  <div class = "row">
+                  <h4 class = "col s11 offset-s1">¿Qué desea publicar?</h4>
+                </div>
                   <br>
 
-                    <button class="btn-large col s4 offset-s1" onclick="crearAnuncio()" >Anuncio</button>
-                    <button class="btn-large col s4 offset-s2" onclick="crearPregunta()">Pregunta</button>
+                  <button class="btn-large col s4 offset-s1" onclick="crearAnuncio()" style="background-color: #68B1A7" >Anuncio</button>
+                  <button class="btn-large col s4 offset-s2" onclick="crearPregunta()" style="background-color: #68B1A7">Pregunta</button>
 
                 </div>
 
@@ -68,6 +70,8 @@
                     dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
                     weekHeader: 'Sm',
                     dateFormat: 'yyyy-mm-dd',
+                    format: 'yyyy-mm-dd',
+                    formatSubmit: 'yyyy-mm-dd', 
                     firstDay: 1,
                     isRTL: false,
                     showMonthAfterYear: false,

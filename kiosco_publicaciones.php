@@ -16,7 +16,6 @@
           menu-space
         </div>
         <div class = "col l9 s12">
-          <h2 class = "row"> Publicaciones</h2>
 
             <?php
 
