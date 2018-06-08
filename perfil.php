@@ -23,7 +23,6 @@
 
           <div class = "row">
             <?php
-
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
 
@@ -53,11 +52,21 @@
 
             <div class = "row profile-sections">
 
+
               <div class = "col s4">
-                <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile amber accent-1" onclick="">
-                    <img class="menu-img" src ="icons/planes.png"></img>
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="" style="height: 325px;">
+                    <img class="menu-img" src ="icons/boton_favores.png"></img>
                     <br>
-                    <a class="flow-text" style="color: #5F77B7">Mis Planes</a>
+                    <br>
+                    <a class="grey-text text-darken-2 justify">Descubra los resultados de los favores que ha hecho</a>
+
+                </button>
+              </div>
+
+              <div class = "col s4">
+                <button class = "col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile amber accent-1" onclick="" style="height: 325px;">
+                    <img class="menu-img" src ="icons/boton_planes.png"></img>
+                    <br>
                     <br>
                     <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
 
@@ -65,23 +74,11 @@
               </div>
 
               <div class = "col s4">
-                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="">
-                    <img class="menu-img" src ="icons/manos.png"></img>
+                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="" style="height: 325px;">
+                    <img class="menu-img" src ="icons/boton_mercado.png"></img>
                     <br>
-                    <a class="flow-text"  style="color: #5F77B7">Mis Votos</a>
                     <br>
-                    <a class="grey-text text-darken-2 justify">Descubra los resultados que le han dado a sus preguntas</a>
-
-                </button>
-              </div>
-
-              <div class = "col s4">
-                <button class = "col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="">
-                    <img class="menu-img" src ="icons/anuncio.png"></img>
-                    <br>
-                    <a class="flow-text"  style="color: #5F77B7">Mis Anuncios</a>
-                    <br>
-                    <a class="grey-text text-darken-2 justify">Vuelva a leer los mensajes que ha compartido</a>
+                    <a class="grey-text text-darken-2 justify">Vuelva a ver los servicios que ha compartido</a>
 
                 </button>
               </div>
