@@ -52,7 +52,7 @@
                   if ($row[6] != NULL ){?>
                   <p>
                     <label>
-                      <input class="with-gap" name="opc<?php echo $row[0];?>" type="radio" value="1" required />
+                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="1" required />
                       <span><?php echo $row[6];?></span>
                     </label>
                   </p>
@@ -60,7 +60,7 @@
                 if ($row[7] != NULL ){?>
                   <p>
                     <label>
-                      <input class="with-gap" name="opc<?php echo $row[0];?>" type="radio" value="2" />
+                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="2" />
                       <span><?php echo $row[7];?></span>
                     </label>
                   </p>
@@ -68,14 +68,14 @@
                 if ($row[8] != NULL){?>
                   <p>
                     <label>
-                      <input class="with-gap" name="opc<?php echo $row[0];?>" type="radio" value="3" />
+                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="3" />
                       <span><?php echo $row[8];?></span>
                     </label>
                   </p>
                 <?php }?>
                   <p>
                     <label>
-                      <input class="with-gap" name="opc<?php echo $row[0];?>" type="radio" value="4" />
+                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="4" />
                       <span>Ninguno de los anteriores</span>
                     </label>
                   </p>
