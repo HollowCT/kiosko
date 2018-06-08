@@ -31,8 +31,8 @@
         <div class = "convocatoria-contenido" id = "respuesta<?php echo $row[0];?>">
           <div class = "row center">Asistencia</div>
           <div class = "row center">
-            <input class = "btn confirm-invite green" type="submit" onclick="confirmarAsistencia(<?php echo $row[0];?>)" value = "✓">
-            <input class = "btn deny-invite red" type="submit" onclick="rechazarAsistencia(<?php echo $row[0];?>)" value = "✕ "/>
+            <input class = "btn confirm-invite green" id = "confirm<?php echo $row[0];?>" type="submit" onclick="confirmarAsistencia(<?php echo $row[0];?>)" value = "✓">
+            <input class = "btn deny-invite red" id = "deny<?php echo $row[0];?>" type="submit" onclick="rechazarAsistencia(<?php echo $row[0];?>)" value = "✕ "/>
           </div>
         </div>
       </form>

@@ -87,6 +87,29 @@
 
           }
 
+          function confirmarAsistencia(convocatoriaID){
+            var respuesta = document.getElementById("confirm"+convocatoriaID);
+            var opuesto = document.getElementById("deny"+convocatoriaID);
+            if ( opuesto.classList.contains( "disabled" ) ) {
+              opuesto.classList.remove("disabled");
+              opuesto.classList.remove("grey");
+            }
+            respuesta.classList.add("disabled");
+            respuesta.classList.add("grey");
+
+          }
+
+          function rechazarAsistencia(convocatoriaID){
+            var respuesta = document.getElementById("deny"+convocatoriaID);
+            var opuesto = document.getElementById("confirm"+convocatoriaID);
+            if ( opuesto.classList.contains( "disabled" ) ) {
+              opuesto.classList.remove("disabled");
+              opuesto.classList.remove("grey");
+            }
+            respuesta.classList.add("disabled");
+            respuesta.classList.add("grey");
+          }
+
         </script>
     </body>
 </html>
