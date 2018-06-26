@@ -93,8 +93,11 @@
   <div class="valign-wrapper right" style="width:70px;">
     <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
   </div>
-  <?php require 'kiosco_desconectar_bdd.php'; ?>
 
+  <div class="valign-wrapper center">
+  <img src="icons/comuna_sm" alt=""  class="right menu-img">
+  </div>
+  <?php require 'kiosco_desconectar_bdd.php'; ?>
   <div class = "white-text hide-on-large-only">
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
   Menu
