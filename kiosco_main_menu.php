@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'kiosco_conectar_bdd.php';
+date_default_timezone_set('America/New_York');
 // $id = $_SESSION('id');
 // echo $id;
 // var_dump($_SESSION);
