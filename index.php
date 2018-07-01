@@ -1,4 +1,113 @@
-<?php require 'config.php'; ?>
+<?php require 'config.php';
+
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
+
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = 'Introduce tu nombre de usuario.';
+    } else{
+        $username = trim($_POST["username"]);
+    }
+
+    // Check if password is empty
+    if(empty(trim($_POST['password']))){
+        $password_err = 'Introduce tu contraseña.';
+    } else{
+        $password = trim($_POST['password']);
+    }
+
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+
+        $sql = "SELECT id,username, password FROM users WHERE username = '$username'";
+        if($q1 = mysqli_query($link, $sql)){
+          $info = mysqli_fetch_assoc($q1);
+          if(password_verify($password, $info['password'])){
+
+                session_start();
+                $_SESSION['S_username'] = $username;
+                $_SESSION['S_id'] = $info['id'];
+                header("location: kiosco_main_menu.php");
+            } else{
+
+                header("location: index.php?credentials=mal");
+            }
+
+        }
+        else{
+            header("location: index.php?credentials=mal");
+        }
+    }
+    // Close connection
+    mysqli_close($link);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+        //echo var_dump($_POST);
+        $fn=ucfirst($_POST['first_name']);
+        $ln=ucfirst($_POST['last_name']);
+        $username=trim($_POST['first_name'].$_POST['last_name']);
+        $sql = "SELECT username FROM users WHERE username like '$username%' ORDER BY username DESC";
+        // echo $sql;
+        //echo var_dump($link);
+    if($q1 = mysqli_query($link, $sql)){
+        // echo "hizo algo";
+        $row = mysqli_fetch_array($q1);
+
+            if(count($row)>0){
+                $lastdigits = substr($row[0], -2);
+                //evaluar últimos dos dígitos para saber si hay múltiples usuarios con ese nombre
+                $digits = ctype_digit($lastdigits) ? intval($lastdigits) : null;
+                if(!($digits === null)){
+                  $digits += 1; //crear un nuevo usuario con ese Nombre
+                  $digits = ($digits<9) ? '0'.$digits : $digits;
+                  $username .= $digits;
+                }else
+                  $username .= '01';
+            }
+        } else{
+           // echo "No hace query";
+        }
+
+//Password stuff
+
+    $password = trim($_POST['newpassword']);
+
+    $confirm_password = trim($_POST['confirm_password']);
+
+    if($password != $confirm_password){
+        $confirm_password_err = 'La contraseña no es la misma.';
+    }
+    // Remaining data
+
+    $dob = trim($_POST['dob']);
+    $sex = trim($_POST['sex']);
+
+    // Check input errors before inserting in database
+    if(empty($username_err) && empty($confirm_password_err)){
+
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $sql2 = "INSERT INTO users (username,first_name,last_name, password, dob, sex, foto) VALUES ('$username','$fn','$ln','$hash','$dob','$sex','profile8')";
+
+        // echo $sql2;
+
+            if(mysqli_query($link, $sql2)){
+                // Redirect to home to the logged in page
+                header("location: Index.php?newuser=".$username);
+            } else{
+                echo "SHAME ON YOU AND YOUR COW.";
+
+            }
+        }else {
+          // echo "Hay un error";
+        }
+
+
+}
+
+//Open login page
+?>
 <html>
 <meta charset="utf-8">
 <head>
@@ -58,112 +167,6 @@ $password = "";
 $username_err = "";
 $password_err = "";
 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
-
-    // Check if username is empty
-    if(empty(trim($_POST["username"]))){
-        $username_err = 'Introduce tu nombre de usuario.';
-    } else{
-        $username = trim($_POST["username"]);
-    }
-
-    // Check if password is empty
-    if(empty(trim($_POST['password']))){
-        $password_err = 'Introduce tu contraseña.';
-    } else{
-        $password = trim($_POST['password']);
-    }
-
-    // Validate credentials
-    if(empty($username_err) && empty($password_err)){
-
-        $sql = "SELECT id,username, password FROM users WHERE username = '$username'";
-        if($q1 = mysqli_query($link, $sql)){
-        $info = mysqli_fetch_assoc($q1);
-
-
-            if(password_verify($password, $info['password'])){
-
-                session_start();
-                $_SESSION['S_username'] = $username;
-                $_SESSION['S_id'] = $info['id'];
-                header("location: kiosco_main_menu.php");
-            } else{
-
-                $password_err = 'La contraseña no es válida.';
-                echo $password_err;
-            }
-
-        }
-        else{
-            $username_err = "Este usuario no existe.";
-            echo $username_err;
-        }
-    }
-
-
-    // Close connection
-    mysqli_close($link);
-}
-
-elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
-        //echo var_dump($_POST);
-        $fn=ucfirst($_POST['first_name']);
-        $ln=ucfirst($_POST['last_name']);
-        $username=trim($_POST['first_name'].$_POST['last_name']);
-        $sql = "SELECT id FROM users WHERE username = '$username'";
-        // echo $sql;
-        //echo var_dump($link);
-    if($q1 = mysqli_query($link, $sql)){
-        // echo "hizo algo";
-        $row = mysqli_fetch_array($q1);
-
-            if(count($row)>0){
-                $username_err = "Este usuario ya existe.";
-                echo $username_err;
-            }
-        } else{
-           // echo "No hace query";
-        }
-
-//Password stuff
-
-    $password = trim($_POST['newpassword']);
-
-    $confirm_password = trim($_POST['confirm_password']);
-
-    if($password != $confirm_password){
-        $confirm_password_err = 'La contraseña no es la misma.';
-    }
-    // Remaining data
-
-    $dob = trim($_POST['dob']);
-    $sex = trim($_POST['sex']);
-
-    // Check input errors before inserting in database
-    if(empty($username_err) && empty($confirm_password_err)){
-
-        $hash = password_hash($password, PASSWORD_BCRYPT);
-        $sql2 = "INSERT INTO users (username,first_name,last_name, password, dob, sex, foto) VALUES ('$username','$fn','$ln','$hash','$dob','$sex','profile8')";
-
-        // echo $sql2;
-
-            if(mysqli_query($link, $sql2)){
-                // Redirect to home to the logged in page
-                header("location: Index.php");
-            } else{
-                echo "SHAME ON YOU AND YOUR COW.";
-
-            }
-        }else {
-          // echo "Hay un error";
-        }
-
-
-}
-
-
 ?>
 
 
@@ -172,14 +175,26 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
 <div class="row">
   <ul class="tabs teal">
-    <li class="tab col s6"><a class="white-text active" href="#login">login</a></li>
-    <li class="tab col s6"><a class="white-text" href="#register">register</a></li>
+    <li class="tab col s6"><a class="white-text <?php if (empty($confirm_password_err)) echo "active"; ?>" href="#login">login</a></li>
+    <li class="tab col s6"><a class="white-text <?php if (!empty($confirm_password_err)) echo "active"; ?> " href="#register">register</a></li>
   </ul>
   	<div id="login"  class="col s12">
   		<form name='login' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
   				<h4 class="teal-text">Bienvenido</h3>
   				<div class="row">
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['credentials']))
+                echo "<div class = 'red-text col s12'>Usuario o contraseña inválidos</div>";
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['newuser'])){
+                echo "<div class='card-panel green lighten-2'>
+                        Su nuevo nombre de usuario es: <b>".$_GET['newuser']."</b>
+                        <br>
+                        Recuerde su nombre de usuario y contraseña. Sin estos datos no podrá entrar al sistema.
+                        </div>";
+            }
+            ?>
   					<div class="input-field col s12">
   						<input name="username" id="username" type="text" class="validate">
   						<label for="username">Nombre de Usuario</label>
@@ -208,16 +223,22 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   			<div class="form-container">
   				<h4 class="teal-text">¿Nuevo Usuario? ¡Registrese!</h4>
   				<div class="row">
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($confirm_password_err))
+                echo "<div class = 'red-text col s12'>La confirmación de contraseña no coincide</div>";
+                //en caso de presentar este error, mostrar valores con que llenó la forma
+
+             ?>
   					<div class="input-field col s4">
-  						<input name="first_name" id="first_name" type="text" class="validate" required>
+  						<input name="first_name" id="first_name" type="text" class="validate" <?php if (!empty($confirm_password_err)) echo "value= '".trim($_POST['first_name'])."'"; ?> required>
   						<label for="first_name">Nombre</label>
   					</div>
   					<div class="input-field col s4">
-  						<input name="last_name" id="last_name" type="text" class="validate" required>
+  						<input name="last_name" id="last_name" type="text" class="validate" <?php if (!empty($confirm_password_err)) echo "value= '".trim($_POST['last_name'])."'"; ?> required>
   						<label for="last_name">Apellido</label>
   					</div>
             <div class="input-field col s4">
-  						<input name="dob" id="dob" type="date" class="validate" required>
+  						<input name="dob" id="dob" type="date" class="validate" <?php if (!empty($confirm_password_err)) echo "value= '".trim($_POST['dob'])."'"; ?> required>
   						<label for="date">Fecha de nacimiento</label>
   					</div>
   				</div>
@@ -225,7 +246,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   					<div class="input-field col s6">
               <p>
                 <label for="male">
-                <input id="male" class="with-gap" name="sex" type="radio" value='m' checked />
+                <input id="male" class="with-gap" name="sex" type="radio" value='m' <?php if (empty($confirm_password_err) || trim($_POST['sex'])=='m') echo "checked"; ?> />
                 <span>Hombre</span>
               </label>
               </p>
@@ -233,7 +254,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
             <div class="input-field col s6">
               <p>
                 <label for="female">
-                <input id="female" class="with-gap" name="sex" type="radio" value='f'  />
+                <input id="female" class="with-gap" name="sex" type="radio" value='f' <?php if (!empty($confirm_password_err) && trim($_POST['sex'])=='f') echo "checked"; ?>  />
                 <span>Mujer</span>
               </label>
               </p>
@@ -272,3 +293,4 @@ $('.tabs').tabs();
 </body>
 
 </html>
+<?php ?>
