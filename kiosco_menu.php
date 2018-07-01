@@ -81,7 +81,7 @@
   <?php require 'kiosco_conectar_bdd.php'; ?>
 
   <?php // aux query for user
-    $query = "SELECT foto FROM Users WHERE id = 2";
+    $query = "SELECT foto FROM Users WHERE id = $_SESSION[S_id]";
     $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
