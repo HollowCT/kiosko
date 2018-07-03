@@ -95,7 +95,7 @@
   </div>
 
   <div class="valign-wrapper center">
-  <img src="icons/comuna_sm" alt=""  class="right menu-img">
+  <img src="icons/comuna_sm.png" alt=""  class="right menu-img">
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>
   <div class = "white-text hide-on-large-only">
