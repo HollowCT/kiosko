@@ -29,7 +29,7 @@
     }
 
     li#nav{
-      padding: 1em;
+      padding: .75em;
     }
 
     .menu-img{
