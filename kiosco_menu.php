@@ -81,7 +81,7 @@
   <?php require 'kiosco_conectar_bdd.php'; ?>
 
   <?php // aux query for user
-    $query = "SELECT foto FROM Users WHERE id = $_SESSION[S_id]";
+    $query = "SELECT foto , puntaje FROM Users WHERE id = $_SESSION[S_id]";
     $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
@@ -93,6 +93,13 @@
   <div class="valign-wrapper right" style="width:70px;">
     <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
   </div>
+  <div class="valign-wrapper right" style="margin-bottom: -20px; margin-top: -5px;">
+    <p class="white-text flow-text"> <?php echo $row[1]; ?></p>
+  </div>
+  <div class="valign-wrapper right" style="width:70px;">
+    <img src="icons/coin.png" alt="" onclick="location.href='kiosco_favores.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
+  </div>
+
 
   <div class="valign-wrapper center">
   <img src="icons/comuna_sm.png" alt=""  class="right menu-img">
