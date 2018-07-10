@@ -1,65 +1,51 @@
 <?php session_start(); ?>
-
-            <!-- Modal Trigger -->
-            <div class = " row post nuevo-favor z-depth-2" style="border-radius: 20px; display: flex;">
-              <div class = "col s1 amber accent-2" style="border-radius: 20px 0px 0px 20px">
-                <i class="medium material-icons">add</i>
-              </div>
-                <button data-target="modal-favor" class="modal-trigger col s11 amber accent-1  left-align flow-text amber accent-1" style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;"> <div class = "col s12">Pedir Favor</div></button>
-
-            </div>
-            <!-- Modal Structure -->
-            <div id="modal-favor" class="modal  modal-fixed-footer">
-              <div class="modal-content valign-wrapper">
-
-                <div id = "ventana-favor" class = " row col s12">
-
-                  <?php
-                  // Open new favour form
-                  require 'kiosco_nuevo_anuncio.php';
-                  ?>
-
-                </div>
+<form id = "forma-favor" name= "forma-favor" class = "col s12" method = "POST" enctype="multipart/form-data" >
+  <input type = "hidden"  name = "usuarioID" value = "<?php echo $_SESSION[S_id]; ?>">
 
 
-              </div>
-              <div class="modal-footer">
-                <a href="#!" id = "boton-publicar" class="modal-action modal-close waves-effect waves-green btn-flat green-text disabled" onclick="publicar()">Publicar</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat" >Cancelar</a>
-              </div>
-            </div>
+  <br><br><br>
+  <div class = "col s12">
 
-            <script>
-              //ajustes para que el modal funcione con la version jquery-1.9.1.min.js del menu
-                document.addEventListener('DOMContentLoaded', function() {
-                  var elems = document.querySelectorAll('.modal');
-                  var instances = M.Modal.init(elems, options);
-                });
+    <div class = "input-field col s12 post-form">
+      <i class="material-icons prefix">title</i>
+      <textarea placeholder="Título de favor" name ="titulo-favor" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25"></textarea>
+    </div>
+  </div>
 
-            </script>
-            <script>
+  <div class = "col s4">
 
-              function publicar(){
-                // Check for filled form on post button
-                if (document.forms["forma-anuncio"]["titulo-anuncio"].value == "" ||
-                 document.forms["forma-anuncio"]["contenido-anuncio"].value == "" ||
-                 document.forms["forma-anuncio"]["fecha-anuncio"].value == "" ||
-                 document.forms["forma-anuncio"]["hora-anuncio"].value == "" ||
-                 document.forms["forma-anuncio"]["minuto-anuncio"].value == "") {
+    <div class = "input-field col s12 post-form">
+      <i class="material-icons prefix">event</i>
+      <input id = "fecha-anuncio" name = "fecha-anuncio" placeholder="Fecha" type="date" class="datepicker" required = "true">
+    </div>
 
-                    alert("Llene todos los datos pertinentes");
-                  }else{
-                    // Post an announcement without exiting or reloading page
-                      $.ajax({
-                          url:'kiosco_publicar_favor.php',
-                          type:'post',
-                          data:$('#forma-favor').serialize(),
-                          success:function(){
-                              alert("¡Su solicitud de favor se ha publicado!");
-                          }
-                      });
-                  }
+    <div class = "input-field col s7 post-form">
+      <i class="material-icons prefix">timer</i>
+      <input  placeholder="H" id = "hora-anuncio" name = "hora-anuncio" type="number" maxlength="2" max="23" min = "0" class="validate" required = "true">
+      <span class="helper-text" data-error="inválido"></span>
+    </div>
 
-              }
+    <div class = "input-field col s4 post-form">
+      <input  placeholder="M" id = "minuto-anuncio" name = "minuto-anuncio" type="number" maxlength="2" max="59" min = "0" class="validate" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value;" required = "true">
+      <span class="helper-text" data-error="inválido"></span>
+    </div>
 
-            </script>
+    <div class = "col s12">
+      <i class="grey-text">(seleccionar una)</i>
+    </div>
+  </div>
+
+  <div class = "col s8">
+    <div class = "input-field col s12 post-form">
+      <i class="material-icons prefix">mode_edit</i>
+      <textarea  placeholder="Contenido..." name ="contenido-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
+    </div>
+
+    <div class = "input-field col s12 post-form">
+      <i class="material-icons prefix">perm_contact_calendar</i>
+      <textarea  placeholder="Contacto: teléfono/dirección/etc." name ="contenido-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
+    </div>
+  </div>
+
+
+</form>

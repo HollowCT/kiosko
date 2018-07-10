@@ -20,7 +20,7 @@
             <?php
 
             // New post button
-            require 'kiosco_nuevo_favor.php';
+            require 'kiosco_pedir_favor.php';
 
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
@@ -52,53 +52,13 @@
 
         <script type="text/javascript" language="JavaScript">
 
-          function enviarRespuesta(preguntaID){
-            var respuesta = document.querySelector('input[name=opc'+preguntaID+']:checked');
-            if(respuesta){
-              respuesta = respuesta.value;
-              //  SUBMIT Vote
-              votar(preguntaID,respuesta);
-              responderVoto(preguntaID);
-            }else{
-              alert("Elija su respuesta para votar");
-            }
-          }
-
-          function votar(preguntaID, respuesta) {
-            $.get("kiosco_votar.php?preguntaID=" + preguntaID+"&voto=" +respuesta);
-            return false;
-          }
-
-          function responderVoto(preguntaID) {
-              var respuesta = document.getElementById("boton-votar"+preguntaID);
-              respuesta.classList.add("disabled");
-
-              alert("Su voto ha sido registrado, gracias por participar.");
-
-          }
-
           function confirmarAsistencia(convocatoriaID){
             var respuesta = document.getElementById("confirm"+convocatoriaID);
-            var opuesto = document.getElementById("deny"+convocatoriaID);
-            if ( opuesto.classList.contains( "disabled" ) ) {
-              opuesto.classList.remove("disabled");
-              opuesto.classList.remove("grey");
-            }
             respuesta.classList.add("disabled");
             respuesta.classList.add("grey");
 
           }
 
-          function rechazarAsistencia(convocatoriaID){
-            var respuesta = document.getElementById("deny"+convocatoriaID);
-            var opuesto = document.getElementById("confirm"+convocatoriaID);
-            if ( opuesto.classList.contains( "disabled" ) ) {
-              opuesto.classList.remove("disabled");
-              opuesto.classList.remove("grey");
-            }
-            respuesta.classList.add("disabled");
-            respuesta.classList.add("grey");
-          }
 
         </script>
     </body>
