@@ -47,7 +47,11 @@ $counter=1;
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <?php
+        // Show menu
+        require 'kiosco_menu.php';
 
+      ?>
   </head>
 
 
@@ -83,14 +87,19 @@ $counter=1;
            // var_dump($_SESSION);
            // $_SESSION('S_username'); //tambien aqui
            // echo 'funciona aqui';
-           $id = $_SESSION["S_id"]; //aqui crasheo
-           // echo $id;
-           // echo 'paso al 9';
-           // echo '<h1>todo bien aqui</h1>';
-           $sql =  "INSERT into Mercado (nombre, descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora) VALUES ('$producto_nombre','$producto_desc','$id','$producto_tele','$producto_precio','$producto_dias_inicio','$producto_dias_fin','$producto_hora' )";
-           // echo $sql;
-           if(mysqli_query($conexion, $sql)){
-               // Redirect to home to the logged in page
+          //  $id = $_SESSION["S_id"]; //aqui crasheo
+          //  echo $id;
+          //  echo 'paso al 9';
+          //  echo '<h1>todo bien aqui</h1>';
+           $sql =  "INSERT into Mercado (nombre, descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora) VALUES ('$producto_nombre','$producto_desc','$id','$producto_tele','$producto_precio','$producto_dias_inicio','$producto_dias_fin','$producto_hora' );";
+          // echo $sql;
+
+
+          // ERRROR para tino
+
+          $result = mysqli_query($conexion,$sql) or die ("error en la consulta").mysqli_error();
+          echo $result;
+           if(mysqli_query($conexion,$sql)){
                echo '<script language="javascript">';
                echo 'alert("producto agregado")';
                echo '</script>';
@@ -100,6 +109,8 @@ $counter=1;
                echo 'alert("No se pudo agregar el producto, intente mas tarde o contacte a soporte")';
                echo '</script>';           }
         }
+
+        //error en mysql query
         else {
           // echo "'no entro'";
         }
@@ -118,7 +129,6 @@ $counter=1;
 
     <!-- Navbar goes here -->
 
-<header class="teal">
   <!-- <div class="section right-align" id="top">
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
     <a onclick="logout()" class="btn red btn-large"> <i class="material-icons right">exit_to_app</i>Salir </a>
@@ -130,9 +140,8 @@ $counter=1;
   </ul>
 
 
-<?php require 'kiosco_menu.php'; ?>
 
-</header>
+
 
 
 
@@ -179,7 +188,7 @@ $counter=1;
                             </div>
                             <div class="input-field">
                               <i class="material-icons prefix">phone</i>
-                              <input id="producto_tele" type="tel" placeholder="Telefono" name="producto_tele" type="text">
+                              <input id="producto_tele" type="number" placeholder="Telefono" name="producto_tele" maxlength="10">
                             </div>
                             <div class="input-field">
                               <i class="material-icons prefix">access_time</i>
