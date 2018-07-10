@@ -24,7 +24,7 @@
 
               </div>
               <div class="modal-footer">
-                <a href="#!" id = "boton-publicar" class="modal-action modal-close waves-effect waves-green btn-flat green-text disabled" onclick="publicar()">Publicar</a>
+                <a href="#!" id = "boton-publicar" class="modal-action modal-close waves-effect waves-green btn-flat green-text" onclick="publicar()">Publicar</a>
                 <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat" >Cancelar</a>
               </div>
             </div>
@@ -45,11 +45,10 @@
 
               function publicar(){
                 // Check for filled form on post button
-                if (document.forms["forma-favor"]["titulo-anuncio"].value == "" ||
-                 document.forms["forma-favor"]["contenido-anuncio"].value == "" ||
-                 document.forms["forma-favor"]["fecha-anuncio"].value == "" ||
-                 document.forms["forma-favor"]["hora-anuncio"].value == "" ||
-                 document.forms["forma-favor"]["minuto-anuncio"].value == "") {
+                if (document.forms["forma-favor"]["titulo-favor"].value == "" ||
+                 document.forms["forma-favor"]["contenido-favor"].value == "" ||
+                 document.forms["forma-favor"]["contacto-favor"].value == "" ||
+                 document.forms["forma-favor"]["categoria-favor"].value == "" ) {
 
                     alert("Llene todos los datos pertinentes");
                   }else{

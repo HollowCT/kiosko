@@ -15,31 +15,31 @@
   <div class = "col s4" style="padding-left: 35px;">
     <p>
       <label>
-        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" checked />
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" value = "fisico" checked />
         <span>Físico</span>
       </label>
     </p>
     <p>
       <label>
-        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" value = "tecnologia"  />
         <span>Tecnología</span>
       </label>
     </p>
     <p>
       <label>
-        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio"  />
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" value = "bienestar"  />
         <span>Bienestar</span>
       </label>
     </p>
     <p>
       <label>
-        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" value = "hogar" />
         <span>Hogar</span>
       </label>
     </p>
     <p>
       <label>
-        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" value = "otros" />
         <span>Otros</span>
       </label>
     </p>
@@ -57,7 +57,7 @@
 
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">perm_contact_calendar</i>
-      <textarea  placeholder="Contacto: teléfono/dirección/etc." name ="contenido-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
+      <textarea  placeholder="Contacto: teléfono/dirección/etc." name ="contacto-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
     </div>
   </div>
 
