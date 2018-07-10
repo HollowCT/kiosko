@@ -8,37 +8,51 @@
 
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">title</i>
-      <textarea placeholder="Título de favor" name ="titulo-favor" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25"></textarea>
+      <textarea placeholder="Título del favor" name ="titulo-favor" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25"></textarea>
     </div>
   </div>
 
-  <div class = "col s4">
-
-    <div class = "input-field col s12 post-form">
-      <i class="material-icons prefix">event</i>
-      <input id = "fecha-anuncio" name = "fecha-anuncio" placeholder="Fecha" type="date" class="datepicker" required = "true">
-    </div>
-
-    <div class = "input-field col s7 post-form">
-      <i class="material-icons prefix">timer</i>
-      <input  placeholder="H" id = "hora-anuncio" name = "hora-anuncio" type="number" maxlength="2" max="23" min = "0" class="validate" required = "true">
-      <span class="helper-text" data-error="inválido"></span>
-    </div>
-
-    <div class = "input-field col s4 post-form">
-      <input  placeholder="M" id = "minuto-anuncio" name = "minuto-anuncio" type="number" maxlength="2" max="59" min = "0" class="validate" onchange="if(parseInt(this.value,10)<10)this.value='0'+this.value;" required = "true">
-      <span class="helper-text" data-error="inválido"></span>
-    </div>
+  <div class = "col s4" style="padding-left: 35px;">
+    <p>
+      <label>
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" checked />
+        <span>Físico</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <span>Tecnología</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio"  />
+        <span>Bienestar</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <span>Hogar</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap col s12 post-form" name="categoria-favor" type="radio" />
+        <span>Otros</span>
+      </label>
+    </p>
 
     <div class = "col s12">
-      <i class="grey-text">(seleccionar una)</i>
+      <i class="grey-text">(seleccionar categoría)</i>
     </div>
   </div>
 
   <div class = "col s8">
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">mode_edit</i>
-      <textarea  placeholder="Contenido..." name ="contenido-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
+      <textarea  placeholder="¿Qué favor quiere pedir?" name ="contenido-favor"  class="validate materialize-textarea" required = "true" maxlength = "65" data-length = "65"></textarea>
     </div>
 
     <div class = "input-field col s12 post-form">
