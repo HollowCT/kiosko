@@ -36,9 +36,9 @@
             echo "<div class = 'feed'>";
 
             // Print the data
-            while($row = mysqli_fetch_row($result)) {
+            while($row = mysqli_fetch_assoc($result)) {
 
-              echo "un favor";
+              require 'kiosco_favor.php';
             }
 
             echo "</div>";
