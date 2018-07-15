@@ -10,7 +10,7 @@
   </div>
 
   <div class = "col s11 amber accent-1 low-text left-align " style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;">
-      <div class ="col s12">
+      <div class ="col s9">
       <div class = "titulo flow-text"><?php echo $row["titulo"];?></div>
 
       <?php // aux query for user
@@ -26,7 +26,18 @@
       <form id = "favor<?php echo $row["favorID"];?>" action = "#">
         <?php echo date_format($date,"d/M/Y"); ?> | <?php echo $row["categoria"];?><br>
         <?php echo $row["contenido"];?> <br>
+      </form>
+    </div>
+    <div class = "col s3">
+      <form id = "forma-favor<?php echo $row["favorID"];?>" action = "#">
+        <br>
         <div class = "favor-contenido" id = "respuesta<?php echo $row["favorID"];?>">
+          <div class = "row center">Voluntario</div>
+          <div class = "row center">
+            <input type = "hidden"  name = "voluntarioID" value = "<?php echo $_SESSION[S_id]; ?>">
+            <input type = "hidden"  name = "favorID" value = "<?php echo $row["favorID"]; ?>">
+            <input class = "btn confirm-invite green" id = "confirm<?php echo $row["favorID"];?>" type="button" onclick="confirmarFavor(<?php echo $row["favorID"];?>)" value = "✓">
+          </div>
         </div>
       </form>
     </div>

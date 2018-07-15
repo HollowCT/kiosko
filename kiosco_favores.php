@@ -28,7 +28,7 @@
             // Create QUERY
             $user = $_SESSION[S_id];
 
-            $query = "SELECT * FROM Favor WHERE favorID NOT IN (SELECT favorID FROM Favor WHERE propietarioID = $user) AND favorID NOT IN(SELECT favorID FROM Favor WHERE voluntarioID != NULL) ORDER BY fechaINI DESC";
+            $query = "SELECT * FROM Favor WHERE favorID NOT IN (SELECT favorID FROM Favor WHERE propietarioID = $user) AND favorID NOT IN(SELECT favorID FROM Voluntario WHERE voluntarioID = $user) ORDER BY fechaINI DESC";
 
 
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
@@ -52,10 +52,17 @@
 
         <script type="text/javascript" language="JavaScript">
 
-          function confirmarAsistencia(convocatoriaID){
-            var respuesta = document.getElementById("confirm"+convocatoriaID);
+          function confirmarFavor(favorID){
+            var respuesta = document.getElementById("confirm"+favorID);
             respuesta.classList.add("disabled");
             respuesta.classList.add("grey");
+
+            // Post a volunteer without exiting or reloading page
+            $.ajax({
+                url:'kiosco_publicar_voluntario.php',
+                type:'post',
+                data:$('#forma-favor'+favorID).serialize(),
+            });
 
           }
 
