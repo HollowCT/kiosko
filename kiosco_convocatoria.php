@@ -32,7 +32,7 @@
           <div class = "row center">Asistencia</div>
           <div class = "row center">
             <input class = "btn confirm-invite green" id = "confirm<?php echo $row[0];?>" type="button" onclick="confirmarAsistencia(<?php echo $row[0];?>)" value = "✓">
-            <input class = "btn deny-invite red" id = "deny<?php echo $row[0];?>" type="button" onclick="rechazarAsistencia(<?php echo $row[0];?>)" value = "✕ "/>
+            <input class = "btn deny-invite red" id = "deny<?php echo $row[0];?>" type="button" onclick="rechazarAsistencia(<?php echo $row[0];?>)" value = "✕"/>
           </div>
         </div>
       </form>

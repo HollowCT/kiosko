@@ -62,6 +62,9 @@
                 url:'kiosco_publicar_voluntario.php',
                 type:'post',
                 data:$('#forma-favor'+favorID).serialize(),
+                success:function(){
+                    alert("Se agregarán sus puntos cuando el favor se haya completado");
+                }
             });
 
           }

@@ -10,7 +10,7 @@
   </div>
 
   <div class = "col s11 amber accent-1 low-text left-align " style="border:none; border-radius: 0px 20px 20px 0px;align-items: stretch;">
-      <div class ="col s9">
+    <div class ="col s8">
       <div class = "titulo flow-text"><?php echo $row["titulo"];?></div>
 
       <?php // aux query for user
@@ -28,7 +28,7 @@
         <?php echo $row["contenido"];?> <br>
       </form>
     </div>
-    <div class = "col s3">
+    <div class = "col s2">
       <form id = "forma-favor<?php echo $row["favorID"];?>" action = "#">
         <br>
         <div class = "favor-contenido" id = "respuesta<?php echo $row["favorID"];?>">
@@ -40,6 +40,17 @@
           </div>
         </div>
       </form>
+    </div>
+    <div class = "col s2 center">
+      <br>
+      <div class = "row"></div>
+      <div class = "row"></div>
+      <div class = "favor-puntos row center">
+        <div class = "col s3 flow-text" style="margin-top: 2px;">+1</div>
+        <div class="col s8 offset-s1 circle white center-align center" style="width: 40px; height: 40px; padding:0px;">
+          <img src="icons/coin.png" alt="" class="circle responsive-img ">
+        </div>
+      </div>
     </div>
   </div>
 
