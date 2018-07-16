@@ -148,6 +148,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
   	position: absolute;
   }
 
+  .card-panel{
+    min-width: 50%;
+    min-height: 50%;
+  }
+
   </style>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -169,19 +174,82 @@ $password_err = "";
 
 ?>
 
+<div class="fixed-action-btn direction-top" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large red">
+            <i onclick="toggle()" class="material-icons">announcement</i>
+          </a>
+        </div>
+
+
+        <div id='anuncios' style="display:none" class="carousel carousel-slider center">
+
+                     <div class="carousel-fixed-item center top">
+                       <h1 style="color:white">Nuevos Anuncios</h1>
+                     </div>
+          <?php
+            $colors = ['amber', 'red', 'green','blue','purple'];
+            $c=0;
+            require 'kiosco_conectar_bdd.php';
+            $sql = "SELECT * FROM Publicacion ORDER BY publicacionID DESC LIMIT 5" ;
+            $q1 = mysqli_query($conexion, $sql);
+            if(mysqli_num_rows($q1)!=0){
+              while($d=mysqli_fetch_assoc($q1)){
+        ?>
+           <div class="carousel-item <?php echo $colors[$c];?>" href="#one!">
+
+             <div class="container valign-wrapper">
+                  <div class="row valign-wrapper">
+                    <div class="card-panel <?php echo $colors[$c]; $c++;?> accent-2">
+                      <div class=" col s2">
+                        <img style="background-color:white" src=
+                         <?php if ($d['tipo']=='votacion') echo "'icons/manos.png'"; ?>
+                         <?php if ($d['tipo']=='evento') echo "'icons/planes.png'"; ?>
+                         <?php if ($d['tipo']=='anuncio') echo "'icons/anuncio.png'"; ?>
+                        alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                      </div>
+                      <div class="col s10">
+                        <h2 class="grey-text text-darken-3  left-align"><?php echo $d['titulo'];?></h2>
+                        <p class='grey-text text-darken-3  flow-text left-align' class=""><?php echo $d['contenido']; ?></p>
+                        <?php if ($d['tipo']=='votacion') {
+                          echo "<ul class='collection'>";
+                          echo "<li class='collection-item'>".$d['opc1']."</li>";
+                          echo "<li class='collection-item'>".$d['opc2']."</li>";
+                          if ($d['opc3']!= NULL) {
+                            echo "<li class='collection-item'>".$d['opc3']."</li>";
+                          }
+                          echo "</ul>";
+                        } ?>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+           </div>
+
+         <?php
+       }
+     }
+       require 'kiosco_desconectar_bdd.php';
+    ?>
+         </div>
+
 
   <div class="section"></div>
-  <div class="container white z-depth-2">
+
+
+
+
+  <div id='menu' class="container white z-depth-2">
 
 <div class="row">
-  <ul class="tabs teal">
+  <ul class="tabs amber">
     <li class="tab col s6"><a class="white-text <?php if (empty($confirm_password_err)) echo "active"; ?>" href="#login">login</a></li>
     <li class="tab col s6"><a class="white-text <?php if (!empty($confirm_password_err)) echo "active"; ?> " href="#register">register</a></li>
   </ul>
   	<div id="login"  class="col s12">
   		<form name='login' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
-  				<h4 class="teal-text">Bienvenido</h3>
+  				<h4 class="amber-text">Bienvenido</h3>
   				<div class="row">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['credentials']))
@@ -208,7 +276,7 @@ $password_err = "";
   				</div>
   				<br>
   				<center>
-  					<button class="btn waves-effect waves-light teal" type="submit" name="login">Iniciar</button>
+  					<button class="btn waves-effect waves-light indigo" type="submit" name="login">Iniciar</button>
   					<br>
   					<br>
   					<!-- <a href="">¿Olvidaste tu contraseña?</a> -->
@@ -221,7 +289,7 @@ $password_err = "";
   	<div id="register" class="col s12">
   		<form name='register' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
-  				<h4 class="teal-text">¿Nuevo Usuario? ¡Registrese!</h4>
+  				<h4 class="amber-text">¿Nuevo Usuario? ¡Registrese!</h4>
   				<div class="row">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($confirm_password_err))
@@ -271,7 +339,7 @@ $password_err = "";
   					</div>
   				</div>
   				<center>
-  					<button class="btn waves-effect waves-light teal" type="submit" name="register">Submit</button>
+  					<button class="btn waves-effect waves-light amber" type="submit" name="register">Submit</button>
   				</center>
   			</div>
   		</form>
@@ -289,6 +357,37 @@ $password_err = "";
 $(document).ready(function(){
 $('.tabs').tabs();
 });
+
+
+var instance = M.Carousel.init({
+  fullWidth: true,
+  indicators: true
+});
+
+// Or with jQuery
+
+$('.carousel.carousel-slider').carousel({
+  fullWidth: true,
+  indicators: true
+});
+
+function toggle() {
+    var x = document.getElementById("anuncios");
+    var y = document.getElementById("menu");
+    if (x.style.display == "none") {
+        x.style.display = "block";
+        x.style.height = "100vh";
+        y.style.display = 'none';
+
+    } else {
+        x.style.display = "none";
+        y.style.display = 'block';
+    }
+}
+
+
+
+
   </script>
 </body>
 
