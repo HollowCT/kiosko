@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'kiosco_conectar_bdd.php';
 date_default_timezone_set('America/New_York');
 // $id = $_SESSION('id');
 // echo $id;
@@ -59,6 +58,7 @@ $counter=1;
   <body>
 
     <?php
+        require 'kiosco_conectar_bdd.php';
         // define variables and set to empty values
         $producto_nombre = $producto_tele = $producto_hora = $producto_dias_inicio = $producto_desc = $producto_precio = $id= "";
         // var_dump($_SESSION);
