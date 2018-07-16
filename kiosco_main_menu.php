@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'kiosco_conectar_bdd.php';
 date_default_timezone_set('America/New_York');
 // $id = $_SESSION('id');
 // echo $id;
@@ -55,6 +54,8 @@ $counter=1;
   <body>
 
     <?php
+        require 'kiosco_conectar_bdd.php';
+
         // define variables and set to empty values
         $producto_nombre = $producto_tele = $producto_hora = $producto_dias_inicio = $producto_desc = $producto_precio = $id= "";
         // var_dump($_SESSION);
@@ -118,7 +119,7 @@ $counter=1;
 
     <!-- Navbar goes here -->
 
-<header class="teal">
+<!-- <header class="teal"> -->
   <!-- <div class="section right-align" id="top">
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
     <a onclick="logout()" class="btn red btn-large"> <i class="material-icons right">exit_to_app</i>Salir </a>
@@ -128,11 +129,11 @@ $counter=1;
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
   </ul>
+</header>
 
 
 <?php require 'kiosco_menu.php'; ?>
 
-</header>
 
 
 
