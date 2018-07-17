@@ -47,8 +47,8 @@
       <div class = "row"></div>
       <div class = "favor-puntos row center">
         <div class = "col s3 flow-text" style="margin-top: 2px;">+1</div>
-        <div class="col s8 offset-s1 circle white center-align center" style="width: 40px; height: 40px; padding:0px;">
-          <img src="icons/coin.png" alt="" class="circle responsive-img ">
+        <div class="col s8 offset-s1 circle  center-align center" style="width: 40px; height: 40px; padding:0px;">
+          <img  src="icons/beecoin3.png" alt="" class="circle z-depth-2 responsive-img ">
         </div>
       </div>
     </div>
