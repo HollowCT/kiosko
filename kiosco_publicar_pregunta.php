@@ -16,14 +16,6 @@ if(isset($_POST["opc3-pregunta"])){
   $opc3 = $_POST["opc3-pregunta"];
 }
 
-
-echo $contenido;
-echo $propietarioID;
-echo $fechaFIN;
-echo $titulo;
-echo $opc1;
-echo $opc2;
-
 // Create QUERY
 
   // Post a question

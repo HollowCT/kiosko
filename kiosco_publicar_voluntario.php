@@ -9,10 +9,6 @@ require 'kiosco_conectar_bdd.php';
 $voluntarioID = $_POST["voluntarioID"];
 $favorID= $_POST["favorID"];
 
-
-echo $voluntarioID;
-echo $favorID;
-
 // Create QUERY
 
 // Post a volunteer request

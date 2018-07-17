@@ -28,7 +28,7 @@
             // Create QUERY
             $user = $_SESSION[S_id];
 
-            $query = "SELECT * FROM Publicacion WHERE publicacionID NOT IN (SELECT publicacionID FROM Asistencia WHERE usuarioID = $user) AND publicacionID NOT IN(SELECT publicacionID FROM Voto WHERE usuarioID = $user) ORDER BY fechaINI DESC";
+            $query = "SELECT * FROM Publicacion WHERE publicacionID NOT IN(SELECT publicacionID FROM Voto WHERE usuarioID = $user) ORDER BY fechaINI DESC";
 
 
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
@@ -97,6 +97,13 @@
             respuesta.classList.add("disabled");
             respuesta.classList.add("grey");
 
+            // Confirm asistance
+            $.ajax({
+                url:'kiosco_publicar_asistencia.php?participacion=true',
+                type:'post',
+                data:$('#forma-convocatoria'+convocatoriaID).serialize(),
+            });
+
           }
 
           function rechazarAsistencia(convocatoriaID){
@@ -108,6 +115,14 @@
             }
             respuesta.classList.add("disabled");
             respuesta.classList.add("grey");
+
+            // Reject asistance
+            $.ajax({
+                url:'kiosco_publicar_asistencia.php?participacion=false',
+                type:'post',
+                data:$('#forma-convocatoria'+convocatoriaID).serialize(),
+            });
+
           }
 
         </script>
