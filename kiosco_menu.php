@@ -29,7 +29,7 @@
     }
 
     li#nav{
-      padding: 1.5em;
+      padding: .75em;
     }
 
     .menu-img{
@@ -40,8 +40,8 @@
 
     .btn-menu{
       border: none;
-      height: 150px;
-      width: 150px;
+      height: 125px;
+      width: 125px;
 
     }
 
@@ -81,7 +81,7 @@
   <?php require 'kiosco_conectar_bdd.php'; ?>
 
   <?php // aux query for user
-    $query = "SELECT foto FROM Users WHERE id = $_SESSION[S_id]";
+    $query = "SELECT foto , puntaje FROM Users WHERE id = $_SESSION[S_id]";
     $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
     $row = mysqli_fetch_row($result);
     $profile = "img/".$row[0].".png";
@@ -93,6 +93,13 @@
   <div class="valign-wrapper right" style="width:70px;">
     <img src="<?php echo $profile;?>" alt="" onclick="location.href='perfil.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
   </div>
+  <div class="valign-wrapper right" style="margin-bottom: -20px; margin-top: -5px;">
+    <p class="white-text flow-text"> <?php echo $row[1]; ?></p>
+  </div>
+  <div class="valign-wrapper right" style="width:50px; margin-right:5px;">
+    <img  src="icons/beecoin3.png" alt="" onclick="location.href='kiosco_favores.php';" class="circle  z-depth-2 responsive-img right menu-img waves-effect waves-light" style="padding:0px; margin-top:10px;">
+  </div>
+
 
   <div class="valign-wrapper center">
   <img src="icons/comuna_sm.png" alt=""  class="right menu-img">
@@ -106,6 +113,7 @@
     <li class="logo center hide-on-small-only" ><img class="menu-img" src ="icons/comuna_amarillo.png" style="max-width:150px;"></img></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_main_menu.php';"  > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_favores.php';"  > <img class="menu-img" src ="icons/favores.png"></img></button></li>
   </ul>
 
    <div class="divider"></div>
