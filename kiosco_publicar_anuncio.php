@@ -13,13 +13,6 @@ $titulo = $_POST["titulo-anuncio"];
 $hora = $_POST["hora-anuncio"];
 $minuto = $_POST["minuto-anuncio"];
 
-echo $contenido;
-echo $propietarioID;
-echo $fechaFIN;
-echo $titulo;
-echo $hora;
-echo $minuto;
-
 // Create QUERY
 if(isset($_POST['evento'])){
   // Post an event

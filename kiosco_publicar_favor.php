@@ -12,12 +12,6 @@ $contacto= $_POST["contacto-favor"];
 $titulo = $_POST["titulo-favor"];
 $categoria = $_POST["categoria-favor"];
 
-echo $contenido;
-echo $propietarioID;
-echo $contacto;
-echo $titulo;
-echo $categoria;
-
 // Create QUERY
 
 // Post a favour request
