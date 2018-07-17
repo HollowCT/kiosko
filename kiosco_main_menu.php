@@ -1,8 +1,6 @@
 <?php
 session_start();
 date_default_timezone_set('America/New_York');
-require 'kiosco_conectar_bdd.php';
-
 // $id = $_SESSION('id');
 // echo $id;
 // var_dump($_SESSION);
@@ -48,11 +46,7 @@ $counter=1;
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <?php
-        // Show menu
-        require 'kiosco_menu.php';
 
-      ?>
   </head>
 
 
@@ -60,6 +54,8 @@ $counter=1;
   <body>
 
     <?php
+        require 'kiosco_conectar_bdd.php';
+
         // define variables and set to empty values
         $producto_nombre = $producto_tele = $producto_hora = $producto_dias_inicio = $producto_desc = $producto_precio = $id= "";
         // var_dump($_SESSION);
@@ -88,19 +84,14 @@ $counter=1;
            // var_dump($_SESSION);
            // $_SESSION('S_username'); //tambien aqui
            // echo 'funciona aqui';
-          //  $id = $_SESSION["S_id"]; //aqui crasheo
-          //  echo $id;
-          //  echo 'paso al 9';
-          //  echo '<h1>todo bien aqui</h1>';
-           $sql =  "INSERT into Mercado (nombre, descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora) VALUES ('$producto_nombre','$producto_desc','$id','$producto_tele','$producto_precio','$producto_dias_inicio','$producto_dias_fin','$producto_hora' );";
-          // echo $sql;
-
-
-          // ERRROR para tino
-
-          $result = mysqli_query($conexion,$sql) or die ("error en la consulta").mysqli_error();
-          echo $result;
-           if(mysqli_query($conexion,$sql)){
+           $id = $_SESSION["S_id"]; //aqui crasheo
+           // echo $id;
+           // echo 'paso al 9';
+           // echo '<h1>todo bien aqui</h1>';
+           $sql =  "INSERT into Mercado (nombre, descripcion, usuarioID, telefono, precio, fecha_ini, fecha_fin, hora) VALUES ('$producto_nombre','$producto_desc','$id','$producto_tele','$producto_precio','$producto_dias_inicio','$producto_dias_fin','$producto_hora' )";
+           // echo $sql;
+           if(mysqli_query($conexion, $sql)){
+               // Redirect to home to the logged in page
                echo '<script language="javascript">';
                echo 'alert("producto agregado")';
                echo '</script>';
@@ -110,8 +101,6 @@ $counter=1;
                echo 'alert("No se pudo agregar el producto, intente mas tarde o contacte a soporte")';
                echo '</script>';           }
         }
-
-        //error en mysql query
         else {
           // echo "'no entro'";
         }
@@ -130,6 +119,7 @@ $counter=1;
 
     <!-- Navbar goes here -->
 
+<!-- <header class="teal"> -->
   <!-- <div class="section right-align" id="top">
     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
     <a onclick="logout()" class="btn red btn-large"> <i class="material-icons right">exit_to_app</i>Salir </a>
@@ -139,9 +129,10 @@ $counter=1;
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
   </ul>
+</header>
 
 
-
+<?php require 'kiosco_menu.php'; ?>
 
 
 
@@ -189,7 +180,7 @@ $counter=1;
                             </div>
                             <div class="input-field">
                               <i class="material-icons prefix">phone</i>
-                              <input id="producto_tele" type="number" placeholder="Telefono" name="producto_tele" maxlength="10">
+                              <input id="producto_tele" type="tel" placeholder="Telefono" name="producto_tele" type="text">
                             </div>
                             <div class="input-field">
                               <i class="material-icons prefix">access_time</i>
