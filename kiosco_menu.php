@@ -96,8 +96,8 @@
   <div class="valign-wrapper right" style="margin-bottom: -20px; margin-top: -5px;">
     <p class="white-text flow-text"> <?php echo $row[1]; ?></p>
   </div>
-  <div class="valign-wrapper right" style="width:70px;">
-    <img src="icons/coin.png" alt="" onclick="location.href='kiosco_favores.php';" class="circle responsive-img right menu-img waves-effect waves-light ">
+  <div class="valign-wrapper right" style="width:50px; margin-right:5px;">
+    <img  src="icons/beecoin3.png" alt="" onclick="location.href='kiosco_favores.php';" class="circle  z-depth-2 responsive-img right menu-img waves-effect waves-light" style="padding:0px; margin-top:10px;">
   </div>
 
 
