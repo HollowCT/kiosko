@@ -1,4 +1,4 @@
-<?php require 'config.php';
+<?php             require 'kiosco_conectar_bdd.php';
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
     if(empty($username_err) && empty($password_err)){
 
         $sql = "SELECT id,username, password FROM users WHERE username = '$username'";
-        if($q1 = mysqli_query($link, $sql)){
+        if($q1 = mysqli_query($conexion, $sql)){
           $info = mysqli_fetch_assoc($q1);
           if(password_verify($password, $info['password'])){
 
@@ -40,7 +40,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
         }
     }
     // Close connection
-    mysqli_close($link);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
@@ -50,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         $username=trim($_POST['first_name'].$_POST['last_name']);
         $sql = "SELECT username FROM users WHERE username like '$username%' ORDER BY username DESC";
         // echo $sql;
-        //echo var_dump($link);
-    if($q1 = mysqli_query($link, $sql)){
+        //echo var_dump($conexion);
+    if($q1 = mysqli_query($conexion, $sql)){
         // echo "hizo algo";
         $row = mysqli_fetch_array($q1);
 
@@ -92,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
         // echo $sql2;
 
-            if(mysqli_query($link, $sql2)){
+            if(mysqli_query($conexion, $sql2)){
                 // Redirect to home to the logged in page
                 header("location: Index.php?newuser=".$username);
             } else{
@@ -105,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
 
 }
+require 'kiosco_desconectar_bdd.php';
 
 //Open login page
 ?>
@@ -153,6 +153,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     min-height: 50%;
   }
 
+  .carousel{
+    height:100vh;
+  }
+
+
+
+
   </style>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -181,11 +188,9 @@ $password_err = "";
         </div>
 
 
-        <div id='anuncios' style="display:none" class="carousel carousel-slider center">
+        <div id='anuncios' style="display:none;" class="carousel carousel-slider center">
 
-                     <div class="carousel-fixed-item center top">
-                       <h1 style="color:white">Nuevos Anuncios</h1>
-                     </div>
+
           <?php
             $colors = ['amber', 'red', 'green','blue','purple'];
             $c=0;
@@ -239,7 +244,7 @@ $password_err = "";
 
 
 
-  <div id='menu' class="container white z-depth-2">
+  <div id='menu' style="display:block;" class="container white z-depth-2">
 
 <div class="row">
   <ul class="tabs amber">
@@ -370,6 +375,13 @@ $('.carousel.carousel-slider').carousel({
   fullWidth: true,
   indicators: true
 });
+
+setTimeout(autoplay, 15000);
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 15000);
+}
+
 
 function toggle() {
     var x = document.getElementById("anuncios");
