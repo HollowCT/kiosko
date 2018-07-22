@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
             if(mysqli_query($conexion, $sql2)){
                 // Redirect to home to the logged in page
-                header("location: Index.php?newuser=".$username);
+                header("location: index.php?newuser=".$username);
             } else{
                 echo "SHAME ON YOU AND YOUR COW.";
 
