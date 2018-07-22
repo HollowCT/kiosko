@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
                 session_start();
                 $_SESSION['S_username'] = $username;
                 $_SESSION['S_id'] = $info['id'];
-                header("location: kiosco_main_menu.php");
+                header("location: kiosco_publicaciones.php");
             } else{
 
                 header("location: index.php?credentials=mal");
