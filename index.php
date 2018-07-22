@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
 
-        $sql = "SELECT id,username, password FROM users WHERE username = '$username'";
+        $sql = "SELECT id,username, password FROM Users WHERE username = '$username'";
         if($q1 = mysqli_query($conexion, $sql)){
           $info = mysqli_fetch_assoc($q1);
           if(password_verify($password, $info['password'])){
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         $fn=ucfirst($_POST['first_name']);
         $ln=ucfirst($_POST['last_name']);
         $username=trim($_POST['first_name'].$_POST['last_name']);
-        $sql = "SELECT username FROM users WHERE username like '$username%' ORDER BY username DESC";
+        $sql = "SELECT username FROM Users WHERE username like '$username%' ORDER BY username DESC";
         // echo $sql;
         //echo var_dump($conexion);
     if($q1 = mysqli_query($conexion, $sql)){
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     if(empty($username_err) && empty($confirm_password_err)){
 
         $hash = password_hash($password, PASSWORD_BCRYPT);
-        $sql2 = "INSERT INTO users (username,first_name,last_name, password, dob, sex, foto) VALUES ('$username','$fn','$ln','$hash','$dob','$sex','profile8')";
+        $sql2 = "INSERT INTO Users (username,first_name,last_name, password, dob, sex, foto) VALUES ('$username','$fn','$ln','$hash','$dob','$sex','profile8')";
 
         // echo $sql2;
 
