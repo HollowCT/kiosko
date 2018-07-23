@@ -88,7 +88,7 @@
     $profile = "img/".$row[0].".png";
   ?>
   <div class="valign-wrapper right">
-    <a onclick="logout()" class=" btn red btn-large right lighten-1" style="margin-top:10px"> <i class="material-icons right">exit_to_app</i>Salir </a>
+    <a onclick="logout()" class=" btn btn-large right grey-text" style="margin-top:10px;background-color: #455685;"> <i class="material-icons right">exit_to_app</i>Salir </a>
   </div>
 
   <div class="valign-wrapper right" style="width:70px;">
@@ -103,7 +103,7 @@
 
 
   <div class="valign-wrapper center">
-  <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only white-text"><i class="material-icons medium" style="position: relative; top: 5px;">menu</i></a>
+  <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only amber-text text-darken-2"><i class="material-icons medium z-depth-2">format_indent_decrease</i></a>
   <img src="img/comuna_sm.png" alt=""  class="right menu-img">
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>

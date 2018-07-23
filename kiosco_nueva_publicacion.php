@@ -20,8 +20,8 @@
                 </div>
                   <br>
 
-                  <button class="btn-large col s4 offset-s1" onclick="crearAnuncio()" style="background-color: #5F77B7" >Anuncio</button>
-                  <button class="btn-large col s4 offset-s2" onclick="crearPregunta()" style="background-color: #5F77B7">Votación</button>
+                  <button class="btn-large col s4 offset-s1" onclick="crearAnuncio()" style="background-color: #5F77B7" >Evento</button>
+                  <button class="btn-large col s4 offset-s2" onclick="crearPregunta()" style="background-color: #5F77B7">Encuesta</button>
 
                 </div>
 
@@ -61,7 +61,7 @@
 
             $(document).ready(function(){
               $('.modal').modal();
-              
+
             });
 
 

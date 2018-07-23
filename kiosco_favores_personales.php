@@ -35,7 +35,7 @@ require 'kiosco_desconectar_bdd.php';
 
     if (document.forms["forma-voluntario"+favorID]["voluntarioID"].value == ""){
 
-        alert("Llene todos los datos pertinentes");
+        alert("Falta seleccionar a un voluntario");
       }else{
 
       var respuesta = document.getElementById("confirm-volunteer"+favorID);

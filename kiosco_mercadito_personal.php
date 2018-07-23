@@ -3,7 +3,7 @@
 
       <?php
       require 'kiosco_conectar_bdd.php';
-      $sql = "SELECT * FROM mercado JOIN users WHERE users.id =mercado.usuarioID AND users.id = $_SESSION[S_id]" ;
+      $sql = "SELECT * FROM Mercado JOIN Users WHERE Users.id =Mercado.usuarioID AND Users.id = $_SESSION[S_id]" ;
       $q1 = mysqli_query($conexion, $sql);
       if(mysqli_num_rows($q1)!=0){
       while($d=mysqli_fetch_assoc($q1)){
@@ -87,7 +87,6 @@
 }
 else {
   echo "No has agregado ningun producto al mercado!";
-
 }
   require 'kiosco_desconectar_bdd.php';
 
