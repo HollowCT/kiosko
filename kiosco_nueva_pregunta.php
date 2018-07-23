@@ -54,3 +54,32 @@
   </div>
 
 </form>
+
+<script type="text/javascript" language="JavaScript">
+
+  function enviarRespuesta(preguntaID){
+    var respuesta = document.querySelector('input[name=opc'+preguntaID+']:checked');
+    if(respuesta){
+      respuesta = respuesta.value;
+      //  SUBMIT Vote
+      votar(preguntaID,respuesta);
+      responderVoto(preguntaID);
+    }else{
+      alert("Elija su respuesta para votar");
+    }
+  }
+
+  function votar(preguntaID, respuesta) {
+    $.get("kiosco_votar.php?preguntaID=" + preguntaID+"&voto=" +respuesta);
+    return false;
+  }
+
+  function responderVoto(preguntaID) {
+      var respuesta = document.getElementById("boton-votar"+preguntaID);
+      respuesta.classList.add("disabled");
+
+      alert("Su voto ha sido registrado, gracias por participar.");
+
+  }
+
+</script>

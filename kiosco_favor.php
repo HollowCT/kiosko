@@ -28,6 +28,7 @@
         <?php echo $row["contenido"];?> <br>
       </form>
     </div>
+    <?php if ($row["propietarioID"] != $_SESSION[S_id]){?>
     <div class = "col s2">
       <form id = "forma-favor<?php echo $row["favorID"];?>" action = "#">
         <br>
@@ -52,6 +53,38 @@
         </div>
       </div>
     </div>
+  <?php } else {?>
+    <div class = "col s4">
+      <form id = "forma-voluntario<?php echo $row["favorID"];?>" action = '#' method="POST">
+        <input type = "hidden"  name = "favorID" value = "<?php echo $row["favorID"]; ?>">
+        <br>
+        <?php //aux query for volunteer list
+        $aux_query = "SELECT id, first_name, last_name, foto FROM Users WHERE id IN (SELECT voluntarioID FROM Voluntario WHERE favorID = ".$row["favorID"].")";
+        $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
+        ?>
+        <div class = "row center">
+          <div class="input-field col s10">
+            <select class="icons" name = "voluntarioID">
+              <option value="" disabled selected>Seleccionar quién ayudó</option>
+              <?php while($aux_row = mysqli_fetch_assoc($aux_result)){ ?>
+
+              <option value="<?php echo $aux_row["id"];?>" data-icon="<?php echo "img/".$aux_row["foto"].".png";?>" class="left"><?php echo $aux_row["first_name"]." ".$aux_row["last_name"];?></option>
+
+              <?php }?>
+            </select>
+            <label>Voluntarios</label>
+          </div>
+          <div class = "left-align">
+            <br>
+            <input class = "btn confirm-volunteer green" id = "confirm-volunteer<?php echo $row["favorID"];?>" type="button" onclick="confirmarVoluntario(<?php echo $row["favorID"];?>)" value = "✓">
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+
+    <?php } ?>
   </div>
 
 
