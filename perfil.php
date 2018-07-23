@@ -1,8 +1,124 @@
 <?php
-  // Show menu
   session_start();
-
 ?>
+
+<?php
+
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
+  require 'kiosco_conectar_bdd.php';
+
+  $fn=ucfirst(trim($_POST['perfil_nombre']));
+  $ln=ucfirst(trim($_POST['perfil_apellido']));
+  $dob = trim($_POST['perfil_fecha']);
+  $sex = trim($_POST['sex']);
+  $pfp = $_POST['icons'];
+
+  if (empty($pfp)){ // no cambia la pfp
+
+    if(!empty($_POST['newpassword']) && !empty($_POST['confirm_password'])){ /// si se cambia la contraseña
+      $password = trim($_POST['newpassword']);
+      $confirm_password = trim($_POST['confirm_password']);
+
+      if($password != $confirm_password){
+          $confirm_password_err = 'La contraseña no es la misma.';
+      }
+
+      if(empty($confirm_password_err)){ //no hay error en las contraseñas
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "UPDATE Users SET first_name = '$fn', last_name= '$ln', dob='$dob', sex='$sex', password='$hash' WHERE id = $_SESSION[S_id]";
+
+        if(mysqli_query($conexion, $sql)){
+            // Redirect to home to the logged in page
+            echo '<script language="javascript">';
+            echo 'alert("cambios exitosos")';
+            echo '</script>';
+        } else{
+            // echo "SHAME ON YOU AND YOUR COW.";
+            echo '<script language="javascript">';
+            echo 'alert("No se pudo editar el perfil, intente mas tarde o contacte a soporte")';
+            echo '</script>';
+           }
+      }else{
+        echo '<script language="javascript">';
+        echo 'alert("las contraseñas no son iguales")';
+        echo '</script>';
+      }
+    }else { //si no se cambia las contraseñas
+      $sql = "UPDATE Users SET first_name = '$fn', last_name= '$ln', dob='$dob', sex='$sex' WHERE id = $_SESSION[S_id]";
+
+      if(mysqli_query($conexion, $sql)){
+          // Redirect to home to the logged in page
+          echo '<script language="javascript">';
+          echo 'alert("cambios exitosos")';
+          echo '</script>';
+      } else{
+          // echo "SHAME ON YOU AND YOUR COW.";
+          echo '<script language="javascript">';
+          echo 'alert("No se pudo editar el perfil, intente mas tarde o contacte a soporte")';
+          echo '</script>';
+         }
+    }
+
+  }else{ //si cambia la pfp
+
+    if(!empty($_POST['newpassword']) && !empty($_POST['confirm_password'])){ /// si se cambia la contraseña y pfp
+      $password = trim($_POST['newpassword']);
+      $confirm_password = trim($_POST['confirm_password']);
+
+      if($password != $confirm_password){
+          $confirm_password_err = 'La contraseña no es la misma.';
+      }
+
+      if(empty($confirm_password_err)){ //no hay error en las contraseñas
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "UPDATE Users SET first_name = '$fn', last_name= '$ln', dob='$dob', sex='$sex', password='$hash', foto='$pfp' WHERE id = $_SESSION[S_id]";
+
+        if(mysqli_query($conexion, $sql)){
+            // Redirect to home to the logged in page
+            echo '<script language="javascript">';
+            echo 'alert("cambios exitosos")';
+            echo '</script>';
+        } else{
+            // echo "SHAME ON YOU AND YOUR COW.";
+            echo '<script language="javascript">';
+            echo 'alert("No se pudo editar el perfil, intente mas tarde o contacte a soporte")';
+            echo '</script>';
+           }
+      }else{
+        echo '<script language="javascript">';
+        echo 'alert("las contraseñas no son iguales")';
+        echo '</script>';
+      }
+    }else { //si no se cambia las contraseñas
+      $sql = "UPDATE Users SET first_name = '$fn', last_name= '$ln', dob='$dob', sex='$sex', foto='$pfp' WHERE id = $_SESSION[S_id]";
+
+      if(mysqli_query($conexion, $sql)){
+          // Redirect to home to the logged in page
+          echo '<script language="javascript">';
+          echo 'alert("cambios exitosos")';
+          echo '</script>';
+      } else{
+          // echo "SHAME ON YOU AND YOUR COW.";
+          echo '<script language="javascript">';
+          echo 'alert("No se pudo editar el perfil, intente mas tarde o contacte a soporte")';
+          echo '</script>';
+         }
+    }
+
+  }
+
+  require 'kiosco_desconectar_bdd.php';
+}
+
+
+//Open login page
+?>
+
+
+
+
+
 <html>
     <meta charset="UTF-8">
     <head>
@@ -43,7 +159,108 @@
 
               <div class = "col s6 align center">
                   <?php echo "<img src = 'img/".$row[7].".png'>"; ?>
+                  <br>
+
+                  <!-- boton del modal de editar perfil -->
+                  <a class="waves-effect waves-light red btn modal-trigger" href="#modal-edit"><i class="material-icons left">edit</i>editar perfil</a>
+                  <!-- Modal Structure -->
+                  <div id="modal-edit" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+
+                      <form id="edit" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                        <br>
+                        <div class = "row center">
+
+                          <div class="col s6">
+                            <div class="row">
+
+                              <div class="input-field col s6">
+                                <i class="material-icons prefix">face</i>
+                                <input required id="perfil_nombre" value="<?php echo $row[2]; ?>"; placeholder="Nombre" name="perfil_nombre" type="text">
+                              </div>
+
+                              <div class="input-field col s6">
+                                <input required id="perfil_apellido" value="<?php echo $row[3]; ?>"; placeholder="Apellido" name="perfil_apellido" type="text">
+                              </div>
+                            </div>
+
+
+                            <div class="input-field">
+                              <i class="material-icons prefix">calendar_today</i>
+                              <input required id="perfil_fecha" value='<?php $db = $row[4]; $timestamp = strtotime($db); echo date('Y-m-d', $timestamp); ?>' placeholder="Fecha nacimiento" name="perfil_fecha" type="date">
+                            </div>
+
+                            <div class="row">
+                              <div class="col s2">
+                                <i class="material-icons prefix">supervised_user_circle</i>
+                                <p>Sexo</p>
+                              </div>
+                              <div class="input-field col s5">
+
+                                  <label for="male">
+                                  <input id="male" class="with-gap" name="sex" type="radio" value='m' <?php if($row[5]=='m'){echo "checked";} ?> />
+                                  <span>Hombre</span>
+                                  </label>
+
+                              </div>
+                              <div class="input-field col s5">
+
+                                  <label for="female">
+                                  <input id="female" class="with-gap" name="sex" type="radio" value='f' <?php if($row[5]=='f'){echo "checked";} ?>  />
+                                  <span>Mujer</span>
+                                  </label>
+
+                              </div>
+                            </div>
+
+                            <div class="input-field col s6">
+                  						<input name="newpassword" id="newpassword" type="password" class="validate">
+                  						<label for="newpassword">Nueva Contraseña</label>
+                  					</div>
+                  					<div class="input-field col s6">
+                  						<input name="confirm_password" id="confirm_password" type="password" class="validate">
+                  						<label for="confirm_password">Confirme Constraseña</label>
+                  					</div>
+
+
+                          </div>
+
+
+
+                          <div class="input-field col s6">
+                            <select name="icons" id='icons' class="icons">
+                              <option value="" disabled selected>Seleccionar imagen de perfil</option>
+                              <option value="profile1" data-icon="img/profile1.png" class="left">Perfil 1</option>
+                              <option value="profile2" data-icon="img/profile2.png" class="left">Perfil 2</option>
+                              <option value="profile3" data-icon="img/profile3.png" class="left">Perfil 3</option>
+                              <option value="profile4" data-icon="img/profile4.png" class="left">Perfil 4</option>
+                              <option value="profile5" data-icon="img/profile5.png" class="left">Perfil 5</option>
+                              <option value="profile6" data-icon="img/profile6.png" class="left">Perfil 6</option>
+                              <option value="profile7" data-icon="img/profile7.png" class="left">Perfil 7</option>
+                              <option value="profile8" data-icon="img/profile8.png" class="left">Perfil 8</option>
+                              <option value="profile9" data-icon="img/profile9.png" class="left">Perfil 9</option>
+                            </select>
+                            <label>Imagenes de perfil</label>
+
+                          <div class = "left-align">
+
+                            <blockquote>
+                              Su usuario es: <?php echo $row[1]; ?>
+                            </blockquote>
+
+                          </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button name='edit' type="submit" class="modal-close waves-effect waves-green btn">Submit</button>
+                      </div>
+                      </form>
+
+                  </div>
               </div>
+
 
               <div class = "col s6">
 
@@ -67,6 +284,11 @@
                 </button>
               </div>
 
+              <?php
+              // require 'kiosco_desconectar_bdd';
+              ?>
+
+
               <!-- modal de favores -->
               <div id="modal-favores" class="modal modal-fixed-footer">
                 <div class="modal-content">
@@ -77,7 +299,7 @@
                   // require 'kiosco_pedir_favor.php';
 
                   // Connect to Database
-                  require 'kiosco_conectar_bdd.php';
+                  // require 'kiosco_conectar_bdd.php';
 
                   // Create QUERY
                   $user = $_SESSION[S_id];
@@ -97,7 +319,7 @@
 
                   echo "</div>";
                   // Close database
-                  require 'kiosco_desconectar_bdd.php';
+                  // require 'kiosco_desconectar_bdd.php';
 
                   ?>
 
@@ -127,7 +349,7 @@
                   // New post button
                   // require 'kiosco_nueva_publicacion.php';
                   // Connect to Database
-                  require 'kiosco_conectar_bdd.php';
+                  // require 'kiosco_conectar_bdd.php';
 
                   // Create QUERY
                   $user = $_SESSION[S_id];
@@ -157,7 +379,7 @@
 
                   echo "</div>";
                   // Close database
-                  require 'kiosco_desconectar_bdd.php';
+                  // require 'kiosco_desconectar_bdd.php';
 
                   ?>
                 </div>
@@ -183,7 +405,7 @@
 
 
                   <?php
-                  require 'kiosco_conectar_bdd.php';
+                  // require 'kiosco_conectar_bdd.php';
                   $sql = "SELECT * FROM Mercado JOIN Users WHERE Users.id =Mercado.usuarioID AND Users.id = $_SESSION[S_id]" ;
                   $q1 = mysqli_query($conexion, $sql);
                   if(mysqli_num_rows($q1)!=0){
@@ -265,7 +487,7 @@
               echo "No has agregado ningun producto al mercado!";
 
             }
-              require 'kiosco_desconectar_bdd.php';
+              // require 'kiosco_desconectar_bdd.php';
 
                   ?>
 
@@ -309,5 +531,18 @@
     $(document).ready(function(){
       $('.modal').modal();
     });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+      $('select').formSelect();
+    });
+
     </script>
 </html>

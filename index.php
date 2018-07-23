@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
            // echo "No hace query";
         }
 
-//Password stuff
+        //Password stuff
 
     $password = trim($_POST['newpassword']);
 
