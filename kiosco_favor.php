@@ -63,13 +63,24 @@
         $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
         ?>
         <div class = "row center">
-          <div class="input-field col s10">
+          <div class="input-field col s9 hide-on-med-and-down">
             <select class="icons" name = "voluntarioID">
-              <option value="" disabled selected>Seleccionar quién ayudó</option>
+              <option value="" disabled selected>Seleccionar</option>
               <?php while($aux_row = mysqli_fetch_assoc($aux_result)){ ?>
-
               <option value="<?php echo $aux_row["id"];?>" data-icon="<?php echo "img/".$aux_row["foto"].".png";?>" class="left"><?php echo $aux_row["first_name"]." ".$aux_row["last_name"];?></option>
-
+              <?php }?>
+            </select>
+            <label>Voluntarios</label>
+          </div>
+          <?php //aux query for volunteer list
+          $aux_query = "SELECT id, first_name, last_name, foto FROM Users WHERE id IN (SELECT voluntarioID FROM Voluntario WHERE favorID = ".$row["favorID"].")";
+          $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
+          ?>
+          <div class="input-field col s9 hide-on-large-only">
+            <select class="icons" name = "voluntarioID">
+              <option value="" disabled selected>Seleccionar</option>
+              <?php while($aux_row = mysqli_fetch_assoc($aux_result)){ ?>
+              <option value="<?php echo $aux_row["id"];?>" class="left"><?php echo $aux_row["first_name"]." ".$aux_row["last_name"];?></option>
               <?php }?>
             </select>
             <label>Voluntarios</label>
