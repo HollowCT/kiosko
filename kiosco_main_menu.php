@@ -196,8 +196,10 @@ $counter=1;
                   </div>
 
                   <div class="modal-footer">
-                    <button name='submitProduct' type="submit" class="modal-close waves-effect waves-green btn">Submit</button>
-                    <button class="modal-close waves-effect waves-red red btn">Cancel</button>
+                    <div class="center">
+                      <button name='submitProduct' type="submit" class="modal-close waves-effect waves-green btn green"><i class="material-icons">check</i></button>
+                      <button class="modal-close waves-effect waves-red red btn"><i class="material-icons">close</i></button>
+                    </div>
                   </div>
                 </form>
                 </div>

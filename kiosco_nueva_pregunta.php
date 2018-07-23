@@ -4,15 +4,11 @@
 
 <form id = "forma-pregunta" name= "forma-pregunta" class = "col s12" method = "POST" enctype="multipart/form-data" >
   <input type = "hidden"  name = "usuarioID" value = "<?php echo $_SESSION[S_id]; ?>">
-
+  <br><br><br>
   <div class = "col s12">
-    <br>
-    <br>
-
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">title</i>
-      <br>
-      <input placeholder="Título de pregunta" name ="titulo-pregunta" type = "text" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25">
+      <textarea placeholder="Título de pregunta" name ="titulo-pregunta" class = "validate materialize-textarea" required = "true" maxlength = "25" data-length = "25"></textarea>
     </div>
 
     <div class = "input-field col s12 post-form">

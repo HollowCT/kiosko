@@ -51,44 +51,54 @@
             </div>
 
             <script>
-              //ajustes para que el modal funcione con la version jquery-1.9.1.min.js del menu
-                document.addEventListener('DOMContentLoaded', function() {
-                  var elems = document.querySelectorAll('.modal');
-                  var instances = M.Modal.init(elems, options);
-                });
+
+            //Ajustes para que el modal funcione con la version jquery-1.9.1.min.js del menu
+
+            document.addEventListener('DOMContentLoaded', function() {
+              var elems = document.querySelectorAll('.modal');
+              var instances = M.Modal.init(elems, options);
+            });
+
+            $(document).ready(function(){
+              $('.modal').modal();
+              
+            });
 
 
-                $(document).ready(function(){
-                  $('.modal').modal();
-                  $('.datepicker').datepicker({
-                    closeText: 'Cerrar',
-                    prevText: '< Ant',
-                    nextText: 'Sig >',
-                    currentText: 'Hoy',
-                    monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                    monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-                    dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-                    dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-                    dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-                    weekHeader: 'Sm',
-                    dateFormat: 'yyyy-mm-dd',
-                    format: 'yyyy-mm-dd',
-                    formatSubmit: 'yyyy-mm-dd',
-                    firstDay: 1,
-                    isRTL: false,
-                    showMonthAfterYear: false,
-                    yearSuffix: '',
-                    container: 'body'
-                  });
-                });
+  /*
+
+
+  //******************************************************************
+  //NOTA: Este modal de calendario ocasiona exceso de memoria
+  //******************************************************************
 
 
 
+    $(document).ready(function(){
+      $('.modal').modal();
+      $('.datepicker').datepicker({
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'yyyy-mm-dd',
+        format: 'yyyy-mm-dd',
+        formatSubmit: 'yyyy-mm-dd',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: '',
+        container: 'body'
+      });
+    });
 
-
-
-
-  /* JavaScript FOR version 2.1
+  JavaScript FOR version 2.1
 
                 $(document).ready(function() {
                   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
