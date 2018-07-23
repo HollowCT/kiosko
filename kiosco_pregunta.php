@@ -40,8 +40,6 @@
                 <div class = "titulo flow-text col s10 offset-s2 hide-on-large-only" ><?php echo $row[9];?></div>
                 <div class = "divider col s10 offset-s2"></div>
               </div>
-
-              <br><br>
               <div class="col s4 offset-s2 valign-wrapper">
                 <br><br><br><?php echo $row[2];?><br>
               </div>
@@ -84,8 +82,10 @@
 
           </div>
           <div class="modal-footer">
-            <a href="#!" id = "boton-votar" class="modal-action modal-close waves-effect waves-green btn-flat green-text" onclick="enviarRespuesta(<?php echo $row[0];?>);">Votar</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat red-text">Cancelar</a>
+            <div class="center">
+              <a href="#!" id = "boton-votar" class="modal-action modal-close waves-effect white-text waves-green btn-flat green" onclick="enviarRespuesta(<?php echo $row[0];?>);"><i class="material-icons">check</i></a>
+              <a href="#!" class="modal-action modal-close waves-effect white-text waves-red btn-flat red"><i class="material-icons">close</i></a>
+            </div>
           </div>
         </form>
 

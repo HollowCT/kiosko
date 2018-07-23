@@ -255,7 +255,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button name='edit' type="submit" class="modal-close waves-effect waves-green btn">Submit</button>
+                        <div class="center">
+                          <button name='edit' type="submit" class="modal-close waves-effect waves-green btn green">✓</button>
+                        </div>
                       </div>
                       </form>
 
@@ -330,7 +332,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                  <div class="center">
+                    <a class="modal-close btn waves-effect waves-light red"><i class="material-icons">close</i></a>
+                  </div>
                 </div>
               </div>
 
@@ -353,7 +357,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                 </div>
                 <div class="modal-footer">
-                  <a href="#!" class="amber modal-close waves-effect waves-light btn-flat">Cerrar</a>
+                  <div class="center">
+                    <a class="modal-close btn waves-effect waves-light red"><i class="material-icons">close</i></a>
+                  </div>
                 </div>
               </div>
 

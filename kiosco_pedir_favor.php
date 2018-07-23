@@ -24,8 +24,10 @@
 
               </div>
               <div class="modal-footer">
-                <a href="#!" id = "boton-publicar" class="modal-action modal-close waves-effect waves-green btn-flat green-text" onclick="publicar()">Publicar</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat" >Cancelar</a>
+                <div class="center">
+                  <a href="#!" id = "boton-publicar" class="modal-action modal-close waves-effect white-text waves-green btn-flat green" onclick="publicar()"><i class="material-icons">check</i></a>
+                  <a href="#!" class="modal-action modal-close waves-effect white-text waves-red btn-flat red"><i class="material-icons">close</i></a>
+                </div>
               </div>
             </div>
 
