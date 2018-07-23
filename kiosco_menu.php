@@ -110,10 +110,10 @@
   Menu
   </div>
   <ul id="slide-out" class="sidenav sidenav-fixed">
-    <li style="max-height:25vh;" class="logo center hide-on-small-only" ><img class="menu-img" src ="img/comuna_amarillo.png" style="max-width:150px;"></img></li>
-    <li style="max-height:25vh;" id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="img/planes.png"></img></button></li>
-    <li style="max-height:25vh;" id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_main_menu.php';"  > <img class="menu-img" src ="img/mercado.png"></img></button></li>
-    <li style="max-height:25vh;" id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_favores.php';"  > <img class="menu-img" src ="img/favores.png"></img></button></li>
+    <li class="logo center hide-on-small-only" ><img class="menu-img" src ="img/comuna_amarillo.png" style="max-width:150px;"></img></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="img/planes.png"></img></button></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_main_menu.php';"  > <img class="menu-img" src ="img/mercado.png"></img></button></li>
+    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_favores.php';"  > <img class="menu-img" src ="img/favores.png"></img></button></li>
   </ul>
 
    <div class="divider"></div>
