@@ -16,6 +16,7 @@
     <?php require 'kiosco_materialize.php'; ?>
     <style media="screen">
 
+
     header{
       padding-left: 300px;
       height: 70px;
@@ -105,6 +106,7 @@
   <!-- <img src="img/comuna_sm.png" alt=""  class="right menu-img"> -->
   <a href="#" data-target="slide-out" class="sidenav-trigger">  <img src="img/comuna_sm.png" alt=""  class="right menu-img"></a>
 
+
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>
   <!-- <div class = "white-text hide-on-large-only">
@@ -117,10 +119,6 @@
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_main_menu.php';"  > <img class="menu-img" src ="img/mercado.png"></img></button></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_favores.php';"  > <img class="menu-img" src ="img/favores.png"></img></button></li>
   </ul>
-
-   <div class="divider"></div>
-</header>
-
 
   </body>
 </html>
