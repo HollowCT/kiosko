@@ -52,3 +52,44 @@
   </div>
 
 </div>
+<script type="text/javascript" language="JavaScript">
+
+  function confirmarAsistencia(convocatoriaID){
+    var respuesta = document.getElementById("confirm"+convocatoriaID);
+    var opuesto = document.getElementById("deny"+convocatoriaID);
+    if ( opuesto.classList.contains( "disabled" ) ) {
+      opuesto.classList.remove("disabled");
+      opuesto.classList.remove("grey");
+    }
+    respuesta.classList.add("disabled");
+    respuesta.classList.add("grey");
+
+    // Confirm asistance
+    $.ajax({
+        url:'kiosco_publicar_asistencia.php?participacion=true',
+        type:'post',
+        data:$('#forma-convocatoria'+convocatoriaID).serialize(),
+    });
+
+  }
+
+  function rechazarAsistencia(convocatoriaID){
+    var respuesta = document.getElementById("deny"+convocatoriaID);
+    var opuesto = document.getElementById("confirm"+convocatoriaID);
+    if ( opuesto.classList.contains( "disabled" ) ) {
+      opuesto.classList.remove("disabled");
+      opuesto.classList.remove("grey");
+    }
+    respuesta.classList.add("disabled");
+    respuesta.classList.add("grey");
+
+    // Reject asistance
+    $.ajax({
+        url:'kiosco_publicar_asistencia.php?participacion=false',
+        type:'post',
+        data:$('#forma-convocatoria'+convocatoriaID).serialize(),
+    });
+
+  }
+
+</script>

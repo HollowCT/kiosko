@@ -271,6 +271,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
             </div>
 
+            <?php
+              // Close database
+              require 'kiosco_desconectar_bdd.php';
+
+            ?>
+
             <div class = "row profile-sections">
 
 
@@ -279,7 +285,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                     <img class="menu-img" src ="icons/boton_favores.png"></img>
                     <br>
                     <br>
-                    <a class="grey-text text-darken-2 justify">Descubra los resultados de los favores que ha hecho</a>
+                    <a class="grey-text text-darken-2 justify">Descubra los voluntarios a los favores que ha pedido</a>
 
                 </button>
               </div>
@@ -293,6 +299,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
               <div id="modal-favores" class="modal modal-fixed-footer">
                 <div class="modal-content">
 
+<<<<<<< HEAD
                   <?php
 
                   // New post button
@@ -322,10 +329,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                   // require 'kiosco_desconectar_bdd.php';
 
                   ?>
+=======
+                  <?php require 'kiosco_favores_personales.php'; ?>
+>>>>>>> fd7733b8d0c6d7d7aff5a7f315175d4319423ab6
 
                   </div>
                   <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    <div class="center">
+                      <a class="modal-close btn waves-effect waves-light red"><i class="material-icons">close</i></a>
+                    </div>
                   </div>
                 </div>
 
@@ -344,6 +356,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
               <!-- modal de planes -->
               <div id="modal-planes" class="modal modal-fixed-footer">
                 <div class="modal-content">
+<<<<<<< HEAD
                   <?php
 
                   // New post button
@@ -356,9 +369,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                   $query = "SELECT * FROM Publicacion WHERE propietarioID = $user ORDER BY fechaINI DESC";
 
+=======
+>>>>>>> fd7733b8d0c6d7d7aff5a7f315175d4319423ab6
 
-                  $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+                  <?php require 'kiosco_planes_personales.php'; ?>
 
+<<<<<<< HEAD
                   echo "<div class = 'feed'>";
 
                   // Print the data
@@ -382,6 +398,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                   // require 'kiosco_desconectar_bdd.php';
 
                   ?>
+=======
+>>>>>>> fd7733b8d0c6d7d7aff5a7f315175d4319423ab6
                 </div>
                 <div class="modal-footer">
                   <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -403,6 +421,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
               <div id="modal-carrito" class="modal modal-fixed-footer">
                 <div class="modal-content">
 
+<<<<<<< HEAD
 
                   <?php
                   // require 'kiosco_conectar_bdd.php';
@@ -493,6 +512,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
 
 
+=======
+                  <?php require 'kiosco_mercadito_personal.php'; ?>
+>>>>>>> fd7733b8d0c6d7d7aff5a7f315175d4319423ab6
 
                 </div>
                 <div class="modal-footer">
@@ -504,13 +526,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
             </div>
 
           </div>
-
-
-          <?php
-            // Close database
-            require 'kiosco_desconectar_bdd.php';
-
-          ?>
 
         </div>
       </div>
