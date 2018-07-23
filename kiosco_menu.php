@@ -102,13 +102,15 @@
 
 
   <div class="valign-wrapper center">
-  <img src="img/comuna_sm.png" alt=""  class="right menu-img">
+  <!-- <img src="img/comuna_sm.png" alt=""  class="right menu-img"> -->
+  <a href="#" data-target="slide-out" class="sidenav-trigger">  <img src="img/comuna_sm.png" alt=""  class="right menu-img"></a>
+
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>
-  <div class = "white-text hide-on-large-only">
+  <!-- <div class = "white-text hide-on-large-only">
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
   Menu
-  </div>
+  </div> -->
   <ul id="slide-out" class="sidenav sidenav-fixed">
     <li class="logo center hide-on-small-only" ><img class="menu-img" src ="img/comuna_amarillo.png" style="max-width:150px;"></img></li>
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="img/planes.png"></img></button></li>
