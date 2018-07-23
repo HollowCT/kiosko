@@ -33,19 +33,25 @@ require 'kiosco_desconectar_bdd.php';
 
   function confirmarVoluntario(favorID){
 
-    var respuesta = document.getElementById("confirm-volunteer"+favorID);
-    respuesta.classList.add("disabled");
-    respuesta.classList.add("grey");
+    if (document.forms["forma-voluntario"+favorID]["voluntarioID"].value == ""){
 
-    // Complete a favor request without reloading page
-    $.ajax({
-        url:'kiosco_confirmar_voluntario.php',
-        type:'post',
-        data:$('#forma-voluntario'+favorID).serialize(),
-        success:function(){
-            alert("Se han otorgado los puntos a su voluntario");
-        }
-    });
+        alert("Llene todos los datos pertinentes");
+      }else{
+
+      var respuesta = document.getElementById("confirm-volunteer"+favorID);
+      respuesta.classList.add("disabled");
+      respuesta.classList.add("grey");
+
+      // Complete a favor request without reloading page
+      $.ajax({
+          url:'kiosco_confirmar_voluntario.php',
+          type:'post',
+          data:$('#forma-voluntario'+favorID).serialize(),
+          success:function(){
+              alert("Se han otorgado los puntos a su voluntario");
+          }
+      });
+    }
 
   }
 

@@ -33,53 +33,53 @@
 
         <!-- Modal Structure -->
         <div id="modal-question<?php echo $row[0];?>" class="modal modal-fixed-footer">
-          <div class="modal-content valign-wrapper">
+          <div class="modal-content ">
             <form id = "pregunta<?php echo $row[0];?>" action = "#">
-              <div class = "row center center-align ">
-                <div class = "titulo flow-text col s10 offset-s2 hide-on-med-and-down" style="margin-top: -50px;"><?php echo $row[9];?></div>
-                <div class = "titulo flow-text col s10 offset-s2 hide-on-large-only" ><?php echo $row[9];?></div>
-                <div class = "divider col s10 offset-s2"></div>
+              <div class = "row center titulo flow-text">
+                <div class = "col s12" ><?php echo $row[9];?></div>
+                <div class = "divider col s12"></div>
               </div>
-              <div class="col s4 offset-s2 valign-wrapper">
-                <br><br><br><?php echo $row[2];?><br>
-              </div>
-              <div class ="col s5 offset-s1">
-                <div class = "pregunta-contenido" id = "respuesta<?php echo $row[0];?>">
-                  <br>
-                  <?php
-                  if ($row[6] != NULL ){?>
-                  <p>
-                    <label>
-                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="1" required />
-                      <span><?php echo $row[6];?></span>
-                    </label>
-                  </p>
-                <?php }
-                if ($row[7] != NULL ){?>
-                  <p>
-                    <label>
-                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="2" />
-                      <span><?php echo $row[7];?></span>
-                    </label>
-                  </p>
-                <?php }
-                if ($row[8] != NULL){?>
-                  <p>
-                    <label>
-                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="3" />
-                      <span><?php echo $row[8];?></span>
-                    </label>
-                  </p>
-                <?php }?>
-                  <p>
-                    <label>
-                      <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="4" />
-                      <span>Ninguno de los anteriores</span>
-                    </label>
-                  </p>
+              <div class = "row left-align">
+                <div class="col s4 offset-s1 valign-wrapper">
+                  <br><br><br><?php echo $row[2];?><br>
+                </div>
+                <div class ="col s6 offset-s1">
+                  <div class = "pregunta-contenido" id = "respuesta<?php echo $row[0];?>">
+                    <br>
+                    <?php
+                    if ($row[6] != NULL ){?>
+                    <p>
+                      <label>
+                        <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="1" required />
+                        <span><?php echo $row[6];?></span>
+                      </label>
+                    </p>
+                  <?php }
+                  if ($row[7] != NULL ){?>
+                    <p>
+                      <label>
+                        <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="2" />
+                        <span><?php echo $row[7];?></span>
+                      </label>
+                    </p>
+                  <?php }
+                  if ($row[8] != NULL){?>
+                    <p>
+                      <label>
+                        <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="3" />
+                        <span><?php echo $row[8];?></span>
+                      </label>
+                    </p>
+                  <?php }?>
+                    <p>
+                      <label>
+                        <input class="with-gap left-align" name="opc<?php echo $row[0];?>" type="radio" value="4" />
+                        <span>Ninguno de los anteriores</span>
+                      </label>
+                    </p>
+                  </div>
                 </div>
               </div>
-
           </div>
           <div class="modal-footer">
             <div class="center">
