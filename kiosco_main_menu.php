@@ -206,11 +206,7 @@ $counter=1;
                 <!-- empieza cartas generadas desde BD -->
                 <?php
                 require 'kiosco_conectar_bdd.php';
-<<<<<<< HEAD
                 $sql = "SELECT * FROM Mercado JOIN Users WHERE Users.id =Mercado.usuarioID" ;
-=======
-                $sql = "SELECT * FROM Mercado JOIN Users WHERE users.id =mercado.usuarioID" ;
->>>>>>> c35c1a452cafba82021170df2934e8c8487ed2c9
                 $q1 = mysqli_query($conexion, $sql);
                 if(mysqli_num_rows($q1)!=0){
 
