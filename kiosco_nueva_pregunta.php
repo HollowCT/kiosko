@@ -30,7 +30,7 @@
 
     <div class = "input-field col s12 post-form">
       <i class="material-icons prefix">event</i>
-      <input id = "fecha-pregunta" name = "fecha-pregunta" placeholder="Día límite" type="date" class="datepicker" required = "true">
+      <input id = "fecha-pregunta" name = "fecha-pregunta" placeholder="Día límite" type="date" class="validate" required = "true">
     </div>
 
   </div>

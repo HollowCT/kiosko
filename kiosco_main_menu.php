@@ -117,19 +117,7 @@ $counter=1;
     ?>
 
 
-    <!-- Navbar goes here -->
-
-<!-- <header class="teal"> -->
-  <!-- <div class="section right-align" id="top">
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white">menu</i></a>
-    <a onclick="logout()" class="btn red btn-large"> <i class="material-icons right">exit_to_app</i>Salir </a>
-  </div>
-  <ul id="slide-out" class="sidenav sidenav-fixed">
-    <li class="logo center" ><h1 text-align="center">g r u p</h1></li>
-    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" onclick="location.href='kiosco_publicaciones.php';" > <img class="menu-img" src ="icons/planes.png"></img></button></li>
-    <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 teal lighten-2 btn-menu" > <img class="menu-img" src ="icons/mercado.png"></img></button></li>
-  </ul>
-</header>
+    
 
 
 <?php require 'kiosco_menu.php'; ?>

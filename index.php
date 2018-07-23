@@ -149,8 +149,8 @@ require 'kiosco_desconectar_bdd.php';
   }
 
   .card-panel{
-    min-width: 50%;
-    min-height: 50%;
+    min-width: 50vh;
+    min-height: 50vh;
   }
 
   .carousel{
