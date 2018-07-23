@@ -153,8 +153,8 @@ require 'kiosco_desconectar_bdd.php';
     min-height: 50vh;
   }
 
-  .carousel{
-    height:100vh;
+  .anuncios{
+    display:none;
   }
 
 
@@ -188,9 +188,7 @@ $password_err = "";
         </div>
 
 
-        <div id='anuncios' style="display:none;" class="carousel carousel-slider center">
-
-
+        <div id='anuncios' style="display:block;" class="carousel carousel-slider center">
           <?php
             $colors = ['amber', 'red', 'green','blue','purple'];
             $c=0;
@@ -237,6 +235,12 @@ $password_err = "";
        require 'kiosco_desconectar_bdd.php';
     ?>
          </div>
+<script type="text/javascript">
+  var x = document.getElementById("anuncios");
+  x.style.display='none';
+</script>
+
+
 
 
   <div class="section"></div>
@@ -386,10 +390,11 @@ function autoplay() {
 function toggle() {
     var x = document.getElementById("anuncios");
     var y = document.getElementById("menu");
-    if (x.style.display == "none") {
-        x.style.display = "block";
+    if (y.style.display == "block") {
+        y.style.display = "none";
+        x.style.display = 'block';
         x.style.height = "100vh";
-        y.style.display = 'none';
+
 
     } else {
         x.style.display = "none";
