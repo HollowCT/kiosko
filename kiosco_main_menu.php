@@ -142,15 +142,16 @@ $counter=1;
 
 
               <!-- card structure -->
-              <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                  <span class="card-title">Nueva Publicacion</span>
-                  <p>¿Quiere vender algo dentro de su comunidad?</p>
+              <div class="card amber accent-2" style="border-radius: 20px; padding-bottom: 8px;">
+                <div class="card-content grey-text text-darken-1">
+                  <span class="card-title black-text center amber accent-1" style="border-radius: 20px 20px 0px 0px; padding-top:15px; padding-bottom: 10px; margin: -25px -25px 10px -25px;">Nuevo Producto</span>
+                  <br>
+                  <div class = "center">
+                    <a href="#modalNewProduct" class="modal-trigger black-text"><i class="large material-icons">add</i></a>
                   </div>
-                  <div class="card-action">
-                    <a href="#modalNewProduct" class="modal-trigger">¡Haga clic aqui!</a>
-                  </div>
+                  <br>
                 </div>
+              </div>
                 <!-- termina card -->
 
                 <!-- Modal Structure -->
@@ -214,19 +215,24 @@ $counter=1;
               ?>
 
               <div class="col s4">
-                <div class="card amber accent-1">
+                <div class="card amber accent-1" style="border-radius: 20px;">
                   <div class="card-content black-text">
-                    <span class="card-title black-text center"><?php echo $d["nombre"]; ?></span>
-                    <div class="divider"></div>
+                    <span class="card-title black-text center amber accent-2" style="border-radius: 20px 20px 0px 0px; padding-top:15px; padding-bottom: 10px; margin: -25px -25px 10px -25px; font-weight: bold;"><?php echo $d["nombre"]; ?></span>
                     <div class="section">
-                      <p><?php echo $d["first_name"]." ".$d["last_name"]; ?></p>
-                      <p><?php echo $d["telefono"]?></p>
-                      <p><?php echo "$".$d["precio"]; ?></p>
+                      <p class = "dueño grey-text text-darken-1">
+                        <div class="valign-wrapper left" style="width:21px; margin-right: 7px;">
+                          <img src="img/<?php echo $d["foto"];?>.png" alt="" class="circle responsive-img">
+                        </div>
+                        <?php echo $d["first_name"]." ".$d["last_name"]; ?>
+                      </p>
+                      <p><i class="material-icons prefix">phone</i> <span style="position: relative; top: -5px;"><?php echo $d["telefono"]?></span></p>
+                      <p><i class="material-icons prefix">attach_money</i> <span style="position: relative; top: -5px;"><?php echo $d["precio"]; ?></span></p>
                     </div>
+                    <div class = "center">
+                      <a href="#modalProduct<?php echo $d['ventaID'];?>" class="white-text modal-trigger btn" style="background-color: #5F77B7">Ver Detalles</a>
                     </div>
-                    <div class="card-action white-text">
-                      <a href="#modalProduct<?php echo $d['ventaID'];?>" class="white-text modal-trigger btn">Mas informacion....</a>
-                    </div>
+                  </div>
+
                   </div>
 
                   <div id="modalProduct<?php echo $d['ventaID'];?>" class="modal modal-fixed-footer">
