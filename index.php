@@ -235,10 +235,10 @@ $password_err = "";
        require 'kiosco_desconectar_bdd.php';
     ?>
          </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var x = document.getElementById("anuncios");
   x.style.display='none';
-</script>
+</script> -->
 
 
 
