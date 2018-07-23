@@ -103,7 +103,7 @@
 
 
   <div class="valign-wrapper center">
-  <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only amber-text text-darken-2"><i class="material-icons medium z-depth-2">format_indent_decrease</i></a>
+  <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only amber darken-2 white-text"><i class="material-icons medium z-depth-2">format_indent_decrease</i></a>
   <img src="img/comuna_sm.png" alt=""  class="right menu-img">
   </div>
   <?php require 'kiosco_desconectar_bdd.php'; ?>
