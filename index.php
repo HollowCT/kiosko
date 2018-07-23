@@ -265,11 +265,14 @@ $password_err = "";
                 echo "<div class = 'red-text col s12'>Usuario o contraseña inválidos</div>";
 
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['newuser'])){
-                echo "<div class='card-panel green lighten-2'>
+                echo "<div class='card horizontal green lighten-2'>
+                        <div class='card-content'>
                         Su nuevo nombre de usuario es: <b>".$_GET['newuser']."</b>
                         <br>
                         Recuerde su nombre de usuario y contraseña. Sin estos datos no podrá entrar al sistema.
+                        </div>;
                         </div>";
+
             }
             ?>
   					<div class="input-field col s12">
