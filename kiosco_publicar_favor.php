@@ -21,6 +21,12 @@ $query = "INSERT INTO Favor(favorID, propietarioID, titulo, categoria, contenido
 
 $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
 
+// Update points on user
+
+$query = "UPDATE Users SET puntaje = puntaje-1 WHERE id = $propietarioID ";
+
+$result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
+
 
 //  Close database
 require 'kiosco_desconectar_bdd.php';

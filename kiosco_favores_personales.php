@@ -7,7 +7,7 @@ require 'kiosco_conectar_bdd.php';
 // Create QUERY
 $user = $_SESSION[S_id];
 
-$query = "SELECT * FROM Favor WHERE propietarioID = $user AND voluntarioID < '' ORDER BY fechaINI DESC";
+$query = "SELECT * FROM Favor WHERE propietarioID = $user AND voluntarioID IS NULL ORDER BY fechaINI DESC";
 
 
 $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());

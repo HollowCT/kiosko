@@ -28,7 +28,7 @@
             // Create QUERY
             $user = $_SESSION[S_id];
 
-            $query = "SELECT * FROM Favor WHERE favorID NOT IN (SELECT favorID FROM Favor WHERE voluntarioID < '' ) AND favorID NOT IN (SELECT favorID FROM Favor WHERE propietarioID = $user) AND favorID NOT IN(SELECT favorID FROM Voluntario WHERE voluntarioID = $user) ORDER BY fechaINI DESC";
+            $query = "SELECT * FROM Favor WHERE voluntarioID IS NULL AND favorID NOT IN (SELECT favorID FROM Favor WHERE voluntarioID < '' ) AND favorID NOT IN (SELECT favorID FROM Favor WHERE propietarioID = $user) AND favorID NOT IN(SELECT favorID FROM Voluntario WHERE voluntarioID = $user) ORDER BY fechaINI DESC";
 
 
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
