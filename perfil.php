@@ -142,11 +142,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
           <br>
 
           <div class = "row">
+
             <?php
             // Connect to Database
             require 'kiosco_conectar_bdd.php';
 
-            // Create QUERY
+            // Create QUERY para sacar info del usuario
             $query = "SELECT * FROM Users WHERE id = $_SESSION[S_id]";
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
             $row = mysqli_fetch_row($result);
@@ -273,7 +274,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
             <?php
               // Close database
-              require 'kiosco_desconectar_bdd.php';
+             require 'kiosco_desconectar_bdd.php';
 
             ?>
 
@@ -290,6 +291,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                 </button>
               </div>
 
+              <?php
+              //require 'kiosco_desconectar_bdd';
+              ?>
 
 
               <!-- modal de favores -->
