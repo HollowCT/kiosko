@@ -120,6 +120,9 @@
     <li id="nav" class="center" ><button class = "waves-effect waves-light z-depth-2 blue light-blue lighten-4 btn-menu" onclick="location.href='kiosco_favores.php';"  > <img class="menu-img" src ="img/favores.png"></img></button></li>
   </ul>
 
+</header>
+
+
   </body>
 </html>
 
