@@ -207,9 +207,9 @@ $password_err = "";
                     <div class="card-panel <?php echo $colors[$c]; $c++;?> accent-2">
                       <div class=" col s2">
                         <img style="background-color:white" src=
-                         <?php if ($d['tipo']=='votacion') echo "'icons/manos.png'"; ?>
-                         <?php if ($d['tipo']=='evento') echo "'icons/planes.png'"; ?>
-                         <?php if ($d['tipo']=='anuncio') echo "'icons/anuncio.png'"; ?>
+                         <?php if ($d['tipo']=='votacion') echo "'img/manos.png'"; ?>
+                         <?php if ($d['tipo']=='evento') echo "'img/planes.png'"; ?>
+                         <?php if ($d['tipo']=='anuncio') echo "'img/anuncio.png'"; ?>
                         alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
                       </div>
                       <div class="col s10">

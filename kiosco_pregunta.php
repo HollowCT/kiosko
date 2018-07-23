@@ -5,7 +5,7 @@
 
   <div class = "col s1 amber accent-2 valign-wrapper" style="border-radius: 20px 0px 0px 20px">
     <div class=" circle white center-align center" style="width: 40px; height: 40px;">
-      <img src="icons/manos.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
+      <img src="img/manos.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
     </div>
   </div>
 

@@ -5,7 +5,7 @@
 <div class = " row center post favor z-depth-2" style="border-radius: 20px; display: flex;">
   <div class = "col s1 amber accent-2 valign-wrapper" style="border-radius: 20px 0px 0px 20px">
     <div class=" circle white center-align center" style="width: 40px; height: 40px;">
-      <img src="icons/favores.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
+      <img src="img/favores.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
     </div>
   </div>
 
@@ -49,7 +49,7 @@
       <div class = "favor-puntos row center">
         <div class = "col s3 flow-text" style="margin-top: 2px;">+1</div>
         <div class="col s8 offset-s1 circle  center-align center" style="width: 40px; height: 40px; padding:0px;">
-          <img  src="icons/beecoin3.png" alt="" class="circle z-depth-2 responsive-img ">
+          <img  src="img/beecoin3.png" alt="" class="circle z-depth-2 responsive-img ">
         </div>
       </div>
     </div>

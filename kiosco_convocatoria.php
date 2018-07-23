@@ -4,7 +4,7 @@
 <div class = "post convocatoria row center z-depth-2" style="border-radius: 20px; display: flex;">
   <div class = "col s1 amber accent-2 valign-wrapper" style="border-radius: 20px 0px 0px 20px">
     <div class=" circle white center-align center" style="width: 40px; height: 40px;">
-      <img src="icons/planes.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
+      <img src="img/planes.png" alt="" class="circle responsive-img "> <!-- notice the "circle" class -->
     </div>
   </div>
 
