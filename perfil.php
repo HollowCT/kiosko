@@ -283,7 +283,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
               <div class = "col s4">
                 <button data-target="modal-favores" class ="modal-trigger col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="" style="height: 325px;">
-                    <img class="menu-img" src ="icons/boton_favores.png"></img>
+                    <img class="menu-img" src ="img/boton_favores.png"></img>
                     <br>
                     <br>
                     <a class="grey-text text-darken-2 justify">Descubra los voluntarios a los favores que ha pedido</a>
@@ -314,7 +314,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
               <div class = "col s4">
                 <button data-target="modal-planes" class ="modal-trigger col s10 offset-s1 align center waves-effect waves-light z-depth-2 btn-profile amber accent-1" onclick="" style="height: 325px;">
-                    <img class="menu-img" src ="icons/boton_planes.png"></img>
+                    <img class="menu-img" src ="img/boton_planes.png"></img>
                     <br>
                     <br>
                     <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
@@ -337,7 +337,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
               <div class = "col s4">
                 <button data-target="modal-carrito" class ="modal-trigger col s10 offset-s1  align center waves-effect waves-light z-depth-2 btn-profile  amber accent-1" onclick="" style="height: 325px;">
-                    <img class="menu-img" src ="icons/boton_mercado.png"></img>
+                    <img class="menu-img" src ="img/boton_mercado.png"></img>
                     <br>
                     <br>
                     <a class="grey-text text-darken-2 justify">Vuelva a ver los servicios que ha compartido</a>
