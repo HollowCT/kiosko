@@ -181,7 +181,7 @@ $counter=1;
                               <input required id="producto_hora" type="time" placeholder="Hora"  name="producto_hora">
                             </div>
                             <div class="input-field">
-                              <i class="material-icons prefix">calendar_today</i>
+                              <i class="material-icons prefix">date_range</i>
                               <input required id="producto_dias_inicio" placeholder="Dia Inicio" name="producto_dias_inicio" type="date">
                               <input required id="producto_dias_fin" type="date" name="producto_dias_fin" placeholder="Dia Fin" name="producto_dias_fin">
                             </div>
@@ -262,7 +262,7 @@ $counter=1;
                                 <?php echo $d["precio"]?>
                               </div>
                               <div class="section">
-                                <i class="material-icons prefix">calendar_today</i>
+                                <i class="material-icons prefix">date_range</i>
                                  del <?php echo date('d/m/Y',strtotime($d["fecha_ini"]));?> hasta <?php echo date('d/m/Y',strtotime($d["fecha_fin"]));?>
                               </div>
                               <div class="section">

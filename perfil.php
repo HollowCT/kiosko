@@ -192,7 +192,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
 
                             <div class="input-field">
-                              <i class="material-icons prefix">calendar_today</i>
+                              <i class="material-icons prefix">date_range</i>
                               <input required id="perfil_fecha" value='<?php $db = $row[4]; $timestamp = strtotime($db); echo date('Y-m-d', $timestamp); ?>' placeholder="Fecha nacimiento" name="perfil_fecha" type="date">
                             </div>
 
@@ -274,7 +274,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                 <div class = "row flow-text"> <b> Nombre: </b> <?php echo $row[2]." ".$row[3];?> </div>
                 <div class = "row flow-text"> <b> Fecha de Nacimiento: </b> <?php echo date_format($date,"d/M/Y"); ?> </div>
+<<<<<<< HEAD
+                <div class = "row flow-text"> <b> Género: </b> <?php
+                if ($row[5]=='m') {
+                  echo 'Masculino';
+                }else {
+                  echo 'Femenino';
+                }
+                 ;?> </div>
+=======
                 <div class = "row flow-text"> <b> Género: </b> <?php echo ($row[5] == "m" ? "Masculino" : "Femenino"); ?> </div>
+>>>>>>> 4c35e6c7f0d8ae2ee5d5e42f106babb9f78ad95a
               </div>
 
             </div>

@@ -54,8 +54,10 @@ if(!isset($_SESSION[S_id])){
                         <?php echo $d["precio"]?>
                       </div>
                       <div class="section">
-                        <i class="material-icons prefix">calendar_today</i>
-                         del <?php echo date('d/m/Y',strtotime($d["fecha_ini"]));?> hasta <?php echo date('d/m/Y',strtotime($d["fecha_fin"]));?>
+                        <i class="material-icons prefix">date_range</i>
+                         del <?php echo date('d/m/Y',strtotime($d["fecha_ini"]));?>
+                         <br>
+                         hasta <?php echo date('d/m/Y',strtotime($d["fecha_fin"]));?>
                       </div>
                       <div class="section">
                         <i class="material-icons prefix">access_time</i>

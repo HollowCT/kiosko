@@ -27,7 +27,7 @@ if(!isset($_SESSION[S_id])){
     </div>
 
     <div class = "input-field col s12 post-form">
-      <i class="material-icons prefix">calendar_today</i>
+      <i class="material-icons prefix">date_range</i>
       <input id = "fecha-anuncio" name = "fecha-anuncio" placeholder="Fecha" type="date" class="validate" required = "true">
     </div>
   </div>
