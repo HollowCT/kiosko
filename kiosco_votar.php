@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION[S_id])){
+  header("location: error.php");
+}?>
+<?php
 // Connect to database
 session_start();
 require 'kiosco_conectar_bdd.php';

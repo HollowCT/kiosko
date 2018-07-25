@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION[S_id])){
+  header("location: error.php");
+}?>
+<?php
 session_start();
 date_default_timezone_set('America/New_York');
 require 'disable_right_click.php';

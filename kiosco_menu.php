@@ -1,4 +1,7 @@
-
+<?php
+if(!isset($_SESSION[S_id])){
+  header("location: error.php");
+}?>
 <html>
 <style>
   .post{
