@@ -270,17 +270,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                 <div class = "row flow-text"> <b> Nombre: </b> <?php echo $row[2]." ".$row[3];?> </div>
                 <div class = "row flow-text"> <b> Fecha de Nacimiento: </b> <?php echo date_format($date,"d/M/Y"); ?> </div>
-<<<<<<< HEAD
-                <div class = "row flow-text"> <b> Género: </b> <?php
-                if ($row[5]=='m') {
-                  echo 'Masculino';
-                }else {
-                  echo 'Femenino';
-                }
-                 ;?> </div>
-=======
                 <div class = "row flow-text"> <b> Género: </b> <?php echo ($row[5] == "m" ? "Masculino" : "Femenino"); ?> </div>
->>>>>>> 4c35e6c7f0d8ae2ee5d5e42f106babb9f78ad95a
               </div>
 
             </div>
