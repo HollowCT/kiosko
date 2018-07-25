@@ -269,7 +269,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
 
                 <div class = "row flow-text"> <b> Nombre: </b> <?php echo $row[2]." ".$row[3];?> </div>
                 <div class = "row flow-text"> <b> Fecha de Nacimiento: </b> <?php echo date_format($date,"d/M/Y"); ?> </div>
-                <div class = "row flow-text"> <b> Género: </b> <?php echo $row[5];?> </div>
+                <div class = "row flow-text"> <b> Género: </b> <?php echo ($row[5] == "m" ? "Masculino" : "Femenino"); ?> </div>
               </div>
 
             </div>
@@ -319,7 +319,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
                     <img class="menu-img" src ="img/boton_planes.png"></img>
                     <br>
                     <br>
-                    <a class="grey-text text-darken-2 justify">Recuerde los eventos en los que usted quiere participar</a>
+                    <a class="grey-text text-darken-2 justify">Recuerde los próximos eventos y observe resultados de sus publicaciones</a>
 
                 </button>
               </div>
