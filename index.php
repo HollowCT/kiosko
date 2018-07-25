@@ -1,6 +1,4 @@
 <?php      require 'kiosco_conectar_bdd.php';
-require 'disable_right_click.php';
-
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){
@@ -106,6 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 
 
 }
+require 'disable_right_click.php';
+
 require 'kiosco_desconectar_bdd.php';
 
 //Open login page
@@ -265,6 +265,9 @@ $password_err = "";
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['credentials']))
                 echo "<div class = 'red-text col s12'>Usuario o contraseña inválidos</div>";
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['illegal']))
+                    echo "<div class = 'red-text col s12'>Favor de iniciar sesión o crear una cuenta</div>";    
 
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['newuser'])){
                 echo "<div class='card horizontal green lighten-2'>

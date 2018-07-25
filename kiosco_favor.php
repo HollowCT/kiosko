@@ -1,3 +1,7 @@
+<?php
+if(!isset($_SESSION[S_id])){
+  header("location: error.php");
+}?>
 <!--- Basic design structure for one announcement-->
 
 
@@ -63,7 +67,7 @@
         $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
         ?>
         <div class = "row center">
-          <div class="input-field col s9 hide-on-med-and-down">
+          <!--<div class="input-field col s9 hide-on-med-and-down">
             <select class="icons" name = "voluntarioID">
               <option value="" disabled selected>Seleccionar</option>
               <?php while($aux_row = mysqli_fetch_assoc($aux_result)){ ?>
@@ -72,6 +76,7 @@
             </select>
             <label>Voluntarios</label>
           </div>
+        -->
           <?php //aux query for volunteer list
           $aux_query = "SELECT id, first_name, last_name, foto FROM Users WHERE id IN (SELECT voluntarioID FROM Voluntario WHERE favorID = ".$row["favorID"].")";
           $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
