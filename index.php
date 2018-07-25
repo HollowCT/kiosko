@@ -1,4 +1,6 @@
-<?php             require 'kiosco_conectar_bdd.php';
+<?php      require 'kiosco_conectar_bdd.php';
+require 'disable_right_click.php';
+
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])){

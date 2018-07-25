@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start();
+require 'disable_right_click.php';
+?>
 <html>
     <meta charset="UTF-8">
     <head>

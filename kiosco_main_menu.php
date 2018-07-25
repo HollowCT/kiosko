@@ -1,6 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('America/New_York');
+require 'disable_right_click.php';
 // $id = $_SESSION('id');
 // echo $id;
 // var_dump($_SESSION);

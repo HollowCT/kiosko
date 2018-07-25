@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require 'disable_right_click.php';
 ?>
 
 <?php
