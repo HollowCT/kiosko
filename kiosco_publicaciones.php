@@ -30,7 +30,7 @@ require 'disable_right_click.php';
             // Create QUERY
             $user = $_SESSION[S_id];
 
-            $query = "SELECT * FROM Publicacion WHERE publicacionID NOT IN(SELECT publicacionID FROM Voto WHERE usuarioID = $user) ORDER BY fechaINI DESC";
+            $query = "SELECT * FROM Publicacion WHERE fechaFIN >= NOW() AND propietarioID != $user AND publicacionID NOT IN(SELECT publicacionID FROM Voto WHERE usuarioID = $user) ORDER BY fechaINI DESC";
 
 
             $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
