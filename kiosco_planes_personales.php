@@ -8,7 +8,7 @@ require 'kiosco_conectar_bdd.php';
 // Create QUERY
 $user = $_SESSION[S_id];
 
-$query = "SELECT * FROM Publicacion WHERE fechaFIN >= NOW() AND tipo NOT LIKE 'anuncio' AND (propietarioID = $user OR publicacionID IN (SELECT publicacionID FROM Asistencia WHERE usuarioID = $user AND participacion = 'true')) ORDER BY fechaINI ASC";
+$query = "SELECT * FROM Publicacion WHERE (propietarioID = $user OR publicacionID IN (SELECT publicacionID FROM Asistencia WHERE usuarioID = $user AND participacion = 'true')) AND NOT LIKE 'anuncio' ORDER BY fechaINI ASC";
 
 
 $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());

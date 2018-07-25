@@ -1,7 +1,3 @@
-<?php
-if(!isset($_SESSION[S_id])){
-  header("location: error.php");
-}?>
 <html>
 <style>
   .post{
@@ -83,7 +79,10 @@ if(!isset($_SESSION[S_id])){
 
 <header style="background-color: #5F77B7">
   <?php require 'kiosco_conectar_bdd.php'; ?>
-
+  <?php
+  if(!isset($_SESSION[S_id])){
+    header("location: error.php");
+  }?>
   <?php // aux query for user
     $query = "SELECT foto , puntaje FROM Users WHERE id = $_SESSION[S_id]";
     $result = mysqli_query($conexion, $query) or die ("Error de consulta ".mysqli_error());
