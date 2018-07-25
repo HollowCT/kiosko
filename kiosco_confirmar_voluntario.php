@@ -1,7 +1,4 @@
-<?php
-if(!isset($_SESSION[S_id])){
-  header("location: error.php");
-}?>
+
 <?php session_start(); ?>
 <?php
 
