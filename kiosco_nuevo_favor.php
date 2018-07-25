@@ -1,4 +1,3 @@
-
 <?php session_start(); ?>
 <form id = "forma-favor" name= "forma-favor" class = "col s12" method = "POST" enctype="multipart/form-data" >
   <input type = "hidden"  name = "usuarioID" value = "<?php echo $_SESSION[S_id]; ?>">

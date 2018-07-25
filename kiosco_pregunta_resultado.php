@@ -1,4 +1,3 @@
-
 <!--- Basic design structure for one question-->
 <?php session_start(); ?>
 

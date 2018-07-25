@@ -1,4 +1,3 @@
-
 <?php session_start(); ?>
 <html>
     <meta charset="UTF-8">

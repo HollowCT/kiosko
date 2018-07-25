@@ -1,4 +1,3 @@
-
 <?php session_start(); ?>
 <!---  Los asuntos de las preguntas son la pregunta
 -->

@@ -1,4 +1,3 @@
-
 <?php
 // Connect to database
 session_start();
