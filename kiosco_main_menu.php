@@ -185,7 +185,7 @@ $counter=1;
                           <div class="col s6">
                             <div class="input-field">
                               <i class="material-icons prefix">attach_money</i>
-                              <input required id="producto_precio" type="number" min="0" step="1" placeholder="producto_precio" name="producto_precio" >
+                              <input required id="producto_precio" type="number" min="0" step="1" placeholder="Precio" name="producto_precio" >
                             </div>
                             <div class="input-field">
                               <textarea id="producto_desc" name="producto_desc" class="materialize-textarea"></textarea>
