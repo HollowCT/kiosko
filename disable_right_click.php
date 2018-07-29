@@ -1,10 +1,5 @@
 <script language="JavaScript">
 
-$(document).on("keydown",function(ev){
-	console.log(ev.keyCode);
-	if(ev.keyCode===27||ev.keyCode===122) return false
-})
-
   window.onload = function() {
     document.addEventListener("contextmenu", function(e){
       e.preventDefault();
