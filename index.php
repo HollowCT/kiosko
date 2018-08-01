@@ -259,8 +259,8 @@ $password_err = "";
 
 <div class="row">
   <ul class="tabs amber">
-    <li class="tab col s6"><a class="white-text <?php if (empty($confirm_password_err)) echo "active"; ?>" href="#login">login</a></li>
-    <li class="tab col s6"><a class="white-text <?php if (!empty($confirm_password_err)) echo "active"; ?> " href="#register">register</a></li>
+    <li class="tab col s6"><a class="white-text <?php if (empty($confirm_password_err)) echo "active"; ?>" href="#login">Inicio de Sesión</a></li>
+    <li class="tab col s6"><a class="white-text <?php if (!empty($confirm_password_err)) echo "active"; ?> " href="#register">Registro</a></li>
   </ul>
   	<div id="login"  class="col s12">
   		<form name='login' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
@@ -361,7 +361,7 @@ $password_err = "";
   					</div>
   				</div>
   				<center>
-  					<button class="btn waves-effect waves-light amber" type="submit" name="register">Submit</button>
+  					<button class="btn waves-effect waves-light indigo" type="submit" name="register">Registrar</button>
   				</center>
   			</div>
   		</form>
