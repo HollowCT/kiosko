@@ -27,7 +27,7 @@
         $aux_result = mysqli_query($conexion, $aux_query) or die ("Error de consulta ".mysqli_error());
         ?>
         <div class = "row center">
-          <div class="input-field col s11 hide-on-med-and-down" style = "margin-top: -5px; margin-bottom: -5px;">
+          <div class="input-field col s11" style = "margin-top: -5px; margin-bottom: -5px;">
             <select class="icons" name = "voluntarioID">
               <option value="" disabled selected>Lista de Asistentes Confirmados</option>
               <?php while($aux_row = mysqli_fetch_assoc($aux_result)){ ?>

@@ -187,10 +187,16 @@ $password_err = "";
           <a class="btn-floating btn-large red">
             <i onclick="toggle()" class="material-icons">announcement</i>
           </a>
-        </div>
+</div>
 
 
-        <div id='anuncios' style="display:block;" class="carousel carousel-slider center">
+        <div id='anuncios' style="display:block; height:0vh;" class="carousel carousel-slider center">
+
+          <div class="carousel-fixed-item center">
+            <img src="img/comuna_sm.png" alt=""  class="responsive">
+          </div>
+
+
           <?php
             $colors = ['amber', 'red', 'green','blue','purple'];
             $c=0;
@@ -201,10 +207,9 @@ $password_err = "";
               while($d=mysqli_fetch_assoc($q1)){
         ?>
            <div class="carousel-item <?php echo $colors[$c];?>" href="#one!">
-
-             <div class="container valign-wrapper">
-                  <div class="row valign-wrapper">
-                    <div class="card-panel <?php echo $colors[$c]; $c++;?> accent-2">
+             <div class="container">
+                  <div class="row">
+                    <div class="card-panel valign-wrapper <?php echo $colors[$c]; $c++;?> accent-2">
                       <div class=" col s2">
                         <img style="background-color:white" src=
                          <?php if ($d['tipo']=='votacion') echo "'img/manos.png'"; ?>
@@ -250,7 +255,7 @@ $password_err = "";
 
 
 
-  <div id='menu' style="display:block;" class="container white z-depth-2">
+  <div id='menu' style="display: block" class="container white z-depth-2">
 
 <div class="row">
   <ul class="tabs amber">
@@ -260,14 +265,14 @@ $password_err = "";
   	<div id="login"  class="col s12">
   		<form name='login' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="col s12">
   			<div class="form-container">
-  				<h4 class="amber-text">Bienvenido</h3>
+  				<h4 class="amber-text">Bienvenido</h4>
   				<div class="row">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['credentials']))
                 echo "<div class = 'red-text col s12'>Usuario o contraseña inválidos</div>";
 
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['illegal']))
-                    echo "<div class = 'red-text col s12'>Favor de iniciar sesión o crear una cuenta</div>";    
+                    echo "<div class = 'red-text col s12'>Favor de iniciar sesión o crear una cuenta</div>";
 
             if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['newuser'])){
                 echo "<div class='card horizontal green lighten-2'>
@@ -373,6 +378,7 @@ $password_err = "";
 
 $(document).ready(function(){
 $('.tabs').tabs();
+toggle();
 });
 
 
