@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
         if(mysqli_query($conexion, $sql)){
             // Redirect to home to the logged in page
             echo '<script language="javascript">';
-            echo 'alert("cambios exitosos")';
+            echo 'alert("Se han guardado los cambios realizados")';
             echo '</script>';
         } else{
             // echo "SHAME ON YOU AND YOUR COW.";
@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])){
       if(mysqli_query($conexion, $sql)){
           // Redirect to home to the logged in page
           echo '<script language="javascript">';
-          echo 'alert("cambios exitosos")';
+          echo 'alert("Se han guardado los cambios realizados")';
           echo '</script>';
       } else{
           // echo "SHAME ON YOU AND YOUR COW.";

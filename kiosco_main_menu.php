@@ -94,7 +94,7 @@ $counter=1;
            if(mysqli_query($conexion, $sql)){
                // Redirect to home to the logged in page
                echo '<script language="javascript">';
-               echo 'alert("producto agregado")';
+               echo 'alert("¡Se ha agregado su producto!")';
                echo '</script>';
            } else{
                // echo "SHAME ON YOU AND YOUR COW.";
